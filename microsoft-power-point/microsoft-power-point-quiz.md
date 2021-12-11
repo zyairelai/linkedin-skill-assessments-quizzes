@@ -181,7 +181,7 @@ If your Word document contains no Heading 1 or Heading 2 styles, PowerPoint will
 
 `Personal Hint: File Tab -> Options -> Advanced -> Image Size and Quality -> Do not compress images in file File Tab -> Options -> Advanced -> Print -> High quality `
 
-#### Q23. You have inserted a video on a slide and want the video to automaaticlly start 2 seconods after the associated slide appears. How can you accomplish this?
+#### Q23. You have inserted a video on a slide and want the video to automatically start 2 seconds after the associated slide appears. How can you accomplish this?
 
 - [ ] Use playback timings.
 - [x] Use animation timings.
@@ -304,7 +304,7 @@ If your Word document contains no Heading 1 or Heading 2 styles, PowerPoint will
 
 #### Q40. How can you format the entire contents of a text box?
 
-- [ ] Click the dashed/dotted border of the text box.
+- [x] Click the dashed/dotted border of the text box.
 - [ ] Right-click the text box and select Select All.
 - [ ] Click the Fond button on the Home tab.
 - [ ] Double-click any word in the text box.
@@ -344,44 +344,141 @@ If your Word document contains no Heading 1 or Heading 2 styles, PowerPoint will
 - [x] Custom Slide Show
 - [ ] Hide Slide
 
-#### Q45. When working with a mapchart, which options can be drawn?
+#### Q46. When working with a mapchart, which options can be drawn?
 
 - [ ] Postal code
 - [ ] State
 - [ ] Country
 - [x] All of these answers
 
-#### Q46.You receive feedback from two clients on your presentation. Each person sent you an edited file. What's the best way to review their changes?
+#### Q47. You receive feedback from two clients on your presentation. Each person sent you an edited file. What's the best way to review their changes?
 
 - [ ] Review > Accept
 - [ ] Review > Smart Lookup
 - [x] Review > Compare
 - [ ] Review > Show Comments
 
-#### Q47. How do you promote subbullets to top-level bullets?
+#### Q48. How do you promote subbullets to top-level bullets?
 
 - [x] Press Shift+Tab.
 - [ ] Right-click the bulleted text and select Promote.
 - [ ] Press the Esc key.
 - [ ] Press the Spacebar.
 
-#### Q48. What is the term used for the arrangement of elements on a slide, such as Title and Content?
+#### Q49. What is the term used for the arrangement of elements on a slide, such as Title and Content?
 
 - [ ] scheme
 - [x] layout
 - [ ] theme
 - [ ] design
 
-#### Q49. After you select the chart icon in a placeholder, what is the next step to create a chart?
+#### Q50. After you select the chart icon in a placeholder, what is the next step to create a chart?
 
 - [ ] Select the chart elements.
 - [ ] Select the chart type.
-- [ ] Select the chart data in Excel.
+- [x] Select the chart data in Excel.
 - [ ] Select the chart style.
 
-#### Q50. How would you show a correlation between the amount of chocolate a city consumes and the number of crimes committed?
+#### Q51. How would you show a correlation between the amount of chocolate a city consumes and the number of crimes committed?
 
 - [ ] Use a bar chart.
 - [ ] Use a column chart.
 - [ ] Use a line chart.
-- [ ] Use a scatter chart.
+- [x] Use a scatter chart.
+
+#### Q52. You want to use a morph transition between two slides. How do you set up the slides?
+
+- [ ] The two slides must have multiple objects in common with different names in the Selection pane
+- [x] The two slides must have at least one obiect in common that is in a different position on the second slide
+- [ ] The second slide must have different objects that are in the same position as the objects on the first slide
+- [ ] The two slides must have at least one obiect in common that is in the same position on the second slide
+
+[Reference 1](https://support.microsoft.com/en-us/office/use-the-morph-transition-in-powerpoint-8dd1c7b2-b935-44f5-a74c-741d8d9244ea#:~:text=The%20Morph%20transition%20allows%20you%20to%20animate%20smooth,of%20things%E2%80%94text%2C%20shapes%2C%20pictures%2C%20SmartArt%20graphics%2C%20and%20WordArt.)
+
+[Reference 2](https://twist.learningguild.net/2019/03/morph-magic-for-incredible-effects-in-powerpoint-richard-goring/#:~:text=Morph%20recognizes%20any%20duplicate%20objects%20across%20two%20slides,make%20objects%20change%20size%2C%20or%20shape%2C%20or%20color.)
+
+#### Q53. Why would you use the Rehearse Timings command?
+
+- [ ] to adiust animation timings
+- [ ] to record your slide show
+- [ ] to remove transition timings
+- [x] to determine how long it takes to present your slide show
+
+[Reference](https://it.nmu.edu/docs/rehearsing-timings-powerpoint)
+
+#### Q54. How can you make an inserted picture look like it has been sketched or painted?
+
+- [ ] Apply a picture effect
+- [ ] Apply a draw effect
+- [x] Apply an artistic effect
+- [ ] Apply a picture style
+
+[Reference](https://edu.gcfglobal.org/en/powerpoint2010/formatting-pictures/1/)
+
+#### Q55. How can you modify your presentations entire set of colors with a single change?
+
+- [ ] Apply a color template
+- [ ] Customize a color fill
+- [ ] Apply a color palette
+- [x] Apply a color theme
+
+[Reference](https://slidesgo.com/slidesgo-school/powerpoint-tutorials/how-to-change-colors-in-a-powerpoint-presentation)
+
+#### Q56. You want to print full-page slides to fill 8. 5-by-11-inch paper, but they appear too small in the preview. What is the best way to rectify this?
+
+- [ ] Change the slide size to standard
+- [ ] Repeatedly bump up the scale setting print option until it fills the page in the preview
+- [ ] Change the scale setting print option to 100%
+- [x] Select the **Scale to Fit Paper** print option
+
+[Reference](https://www.rdpslides.com/pptfaq/FAQ00774_Printing_PowerPoint-_Slide_size_v-_Printer_Page_size.htm)
+
+#### Q57. You want to import a Word document as an outline into a Powerpoint presentation. How should you format the Word documents text that you want to be the slide content?
+
+- [ ] List 2
+- [ ] Content Style
+- [ ] Subtitle
+- [x] Heading Style 2
+
+[Reference](https://support.microsoft.com/en-us/office/import-a-word-outline-into-powerpoint-a25f6e01-9a19-4c0d-a108-7f533e42dfe9)
+
+#### Q58. What is not reviewed when you check a slide shows accessibility?
+
+- [x] missing alt text
+- [ ] slide titles
+- [ ] grammar
+- [ ] reading order
+
+[Reference 1](https://support.microsoft.com/en-us/office/rules-for-the-accessibility-checker-651e08f2-0fc3-4e10-aaca-74b4a67101c1)
+
+[Reference 2](https://webaim.org/resources/evaloffice/)
+
+#### Q59. What is the easiest way to change the appearance of a table?
+
+- [ ] Apply a graphic style
+- [x] Apply a table style
+- [ ] Right-click a table and select a new style
+- [ ] Apply a cell style
+
+[Reference ](https://support.microsoft.com/en-us/office/change-the-look-of-a-table-a18cbaa8-e681-455f-a99f-a2378fe5ff06)
+
+#### Q60. Why would you use Outline view?
+
+- [ ] to quickly edit titles or bulleted text in the Slide pane
+- [ ] to view the comments on all slides
+- [ ] to add notes in the Slide pane
+- [ ] to change the font on all slides
+
+#### Q61. Before publishing a presentation, which option should you use to scan a presentation and look for issues that may make it difficult for someone with a visual impairment to read?
+
+- [ ] Protect Presentation
+- [ ] Inspect Document
+- [ ] Check Compatibility
+- [ ] Check Accessibility
+
+#### Q62. How can you filter the series and/or categories in a chart?
+
+- [ ] Edit the data to remove the data for the series or category.
+- [ ] Switch the rows and columns.
+- [ ] Use a filter so the data series or category does not display.
+- [ ] Change the chart type.

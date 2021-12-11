@@ -108,8 +108,8 @@
 
 - [ ] cropping images in the media library
 - [ ] injecting specialized scripts into the content area
-- [x] creating a site layout
-- [ ] creating and laying out content
+- [ ] creating a site layout
+- [x] creating and laying out content
 
 #### Q14. Which of the following file types is NOT involved in translating WordPress?
 
@@ -129,7 +129,7 @@
 
 - [ ] Template tags prefaced with the \_ don't accept arguments.
 - [ ] Template tags prefaced with the \_ can be used directly within a template.
-- [ ] Template tags prefaced with the \_ display a value. Template tags prefaced with get_the return a value.
+- [x] Template tags prefaced with the \_ display a value. Template tags prefaced with get_the return a value.
 - [ ] Template tags prefaced with the \_ return a value. Template tags prefaced with get_the display a value.
 
 #### Q17. WP_Query is the WordPress query class that is used to fetch posts from the database. How would you create a new instance of this class?
@@ -407,7 +407,7 @@ add_action( 'wp_enqueue_scripts', 'load_scripts' );
 - [ ] It runs once per post in the database.
 - [ ] It runs once.
 - [ ] The Loop doesn't run in template files.
-- [ ] It runs once per fetched post.
+- [x] It runs once per fetched post.
 
 #### Q48. Which is NOT a suggested performance improvement for your WordPress website?
 
@@ -442,7 +442,7 @@ add_action( 'wp_enqueue_scripts', 'load_scripts' );
 #### Q52. According to WordPress PHP coding standards for inline comments, how would you write a single-line comment in a PHP document?
 
 - [x] `// This is a single line comment`
-- [ ] /\* _ This is a single line comment._/
+- [ ] `/\* _ This is a single line comment._/`
 - [ ] `// This is a single line comment.`
 - [ ] `<!-- This is a single line comment -->`
 
@@ -496,14 +496,17 @@ add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
 #### Q59 Review of the HTML on line1. The goal of the PHP on line 2 is to extract the field value and assign it to a variable prior to inserting into the database. What is wrong with this PHP code?
 
-`<input type="text" id="title" name="title" />`
-
-`$title = $_POST[ 'title' ];`
+```
+<input type="text" id="title" name="title" />
+$title = $_POST[ 'title' ];
+```
 
 - [ ] The code sample does not use the GET method. It should be wrapped in the `get_post_field()` function and look like this `$title = get_post_field( $GET[ 'title' ] );`
-- [ ] The code sample doesnot use sanitize the form data. It should use the `sanitize_text_field()` function and look like this `$title = sanitize_text_field( $_POST[ 'title' ] );`
+- [x] The code sample does not use sanitize the form data. It should use the `sanitize_text_field()` function and look like this: `$title = sanitize_text_field( $_POST[ 'title' ] );`
 - [ ] There is no error. The code follows WordPress best practices.
 - [ ] The code sample does not allow for translation. It should use a translation function and look like this: `$title = __( $_POST[ 'title' ];`
+
+[Ref](https://hazimhassan.com/linkedin-wordpress-assessment-answers-2021/)
 
 #### Q60. Which software development principle, often used in WordPress, aims to reduce the repetition of code?
 
@@ -548,3 +551,76 @@ add_action( 'wp_enqueue_scripts', 'load_scripts' );
 - [ ] infinite scroll
 - [ ] skip links
 - [ ] tabbed navigation
+
+#### Q66. What user role would you assign to someone so they can write and publish only their posts and no one else's?
+
+- [ ] Contributor
+- [x] Author
+- [ ] Editor
+- [ ] Subscriber
+
+**Explanation**: [Summary of Roles](https://wordpress.org/support/article/roles-and-capabilities/#summary-of-roles)
+
+#### Q67. When should you edit core WordPress files?
+
+- [ ] when there is no plugin available to make a customization you need
+- [ ] when you need to add a custom page template
+- [ ] when you need to add a custom script to the header or footer of every page in a site
+- [x] You should never edit WordPress core.
+
+**Explanation**: It is not recommended to change WordPress core files other than wp-config.php. [Editing Files Offline](https://wordpress.org/support/article/editing-files/#editing-files-offline)
+
+#### Q68. Which Wordpress conditional would you use to determine if you were on a single page?
+
+- [ ] is_archive()
+- [ ] is_page()
+- [ ] is_page_template()
+- [x] is_single()
+
+[Ref](https://developer.wordpress.org/reference/functions/is_single/)
+
+#### Q69. Wordpress core and many plugins store data in the database in a special format as represented by the sample below. What format is this called?
+
+`a:2:{i:0;s:27:"ari-adminer/ari-adminer.php";i:1;s:30:"atomic-blocks/atomicblocks.php";}`
+
+- [ ] value
+- [x] serialized data
+- [ ] PHP array
+- [ ] text array
+
+[Ref](https://wpengine.com/support/wordpress-serialized-data/)
+
+#### Q70. What is this code sample an example of?
+
+```
+<?php
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+        the_content();
+endwhile;
+else :
+        _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+endif;
+```
+
+- [ ] custom query
+- [ ] template tags
+- [ ] the Loop
+- [ ] nested loop
+
+#### Q71. Which of these are the minimum files required to make a child theme?
+
+- [ ] index.php functions.php
+- [ ] index.php style.css script.js
+- [ ] functions.php style.css script.js
+- [x] functions.php style.css
+
+[Ref](https://kinsta.com/blog/wordpress-child-theme/)
+
+#### Q72. You can harden your Wordpress site security by adding **\_** to your wp-config.php file?
+
+- [ ] hashes and reCAPTCHA
+- [ ] database username and passwords
+- [ ] custom action hooks and filters
+- [x] unique keys and salts
+
+[Ref](https://www.malcare.com/blog/how-to-secure-your-wordpress-site-with-wp-config-php/)

@@ -432,10 +432,10 @@ echo "No, mail is not set";
 
 ##### Q43. Assuming that `$first_name` and `$family_name` are valid strings, which statement is invalid?
 
-- [ ] `echo $first_name. ' '. $familiy_name;`
-- [x] `print $first_name, ' ', $familiy_name;`
-- [ ] `print $first_name. ' '. $familiy_name;`
-- [ ] `echo $first_name, ' ', $familiy_name;`
+- [ ] `echo $first_name. ' '. $family_name;`
+- [x] `print $first_name, ' ', $family_name;`
+- [ ] `print $first_name. ' '. $family_name;`
+- [ ] `echo $first_name, ' ', $family_name;`
 
 ##### Q44. Which code snippet demonstrates encapsulation?
 
@@ -495,32 +495,25 @@ echo "No, mail is not set";
 ```
 
 - [ ]
-
-```php
-          $books = simplexml_load_string('books.xml');
-          echo $books->book[0]->categories->category[1];
-```
-
+  ```php
+  $books = simplexml_load_string('books.xml');
+  echo $books->book[0]->categories->category[1];
+  ```
 - [x]
-
-```php
-          $books = simplexml_load_file('books.xml');
-          echo $books->book[0]->categories->category[1];
-```
-
+  ```php
+  $books = simplexml_load_file('books.xml');
+  echo $books->book[0]->categories->category[1];
+  ```
 - [ ]
-
-```php
-          $books = SimpleXMLElement('books.xml');
-          echo $books->book[0]->categories->category[1];
-```
-
+  ```php
+  $books = SimpleXMLElement('books.xml');
+  echo $books->book[0]->categories->category[1];
+  ```
 - [ ]
-
-```php
-          $books = SimpleXML('books.xml');
-          echo $books->book[0]->categories->category[1];
-```
+  ```php
+  $books = SimpleXML('books.xml');
+  echo $books->book[0]->categories->category[1];
+  ```
 
 ##### Q46. When it comes to the value of a variable, what is the difference between NULL and empty?
 
@@ -628,3 +621,227 @@ isset($_POST['submit'])
 - [ ] `__FUNCTION__`
 - [ ] `__CLASS__`
 - [ ] `__TRAIT__`
+
+##### Q57. What below script will print?
+
+```php
+  if( 1 == true){
+        echo "1";
+  }
+
+  if( 1 === true){
+      echo "2";
+  }
+
+  if("php" == true){
+      echo "3";
+  }
+
+  if("php" === false){
+      echo "4";
+  }
+```
+
+- [ ] 134
+- [x] 13
+- [ ] 1
+- [ ] 123
+
+##### Q57. When should this php script be used?
+
+```php
+$secret_word = 'if i ate spinach';
+setcookie('login', $_REQUEST['username']. ','. md5($_REQUEST['username'].$secret_word));
+```
+
+- [ ] when a user goes to pay for an item online
+- [ ] when items are placed in a cart
+- [ ] at first registration
+- [x] at every login, for security
+
+##### Q58. A PHP "variable variable" takes the value of a variable and treats that as the name of a variable. For example, if `$var` is a variable then `$$var` is a variable variable whose name is the value of `$var`. Which script produces the output below, using variable variables?
+
+```php
+Cat
+Dog
+Dog
+```
+
+- [ ] 
+  ```php
+  $name = "Cat";
+  $name = "Dog";
+  echo $name . "<br/>";
+  echo $$name . "<br/>";
+  echo $Dog;
+  ```
+- [ ] 
+  ```php
+  $name = "Cat";
+  $$name = "Dog";
+  echo $name . "<br/>";
+  echo $$name . "<br/>";
+  echo $Dog;
+  ``` 
+- [x] 
+  ```php
+  $name = "Cat";
+  $$name = "Dog";
+  echo $name . "<br/>";
+  echo $$name . "<br/>";
+  echo $Cat;
+  ```
+- [ ] 
+  ```php
+  $name = "Cat";
+  $$name = "Dog";
+  echo $name . "<br/>";
+  echo $name . "<br/>";
+  echo $Cat;
+  ```
+
+##### Q59. Imagine a web application, built following a MVC architecture, that contains a quiz and a button to score it, When the user presses the Score button, which component should handle the request?
+
+- [ ] router
+- [x] controller
+- [ ] model
+- [ ] view
+
+##### Q60. Which script might be used to continue a user's search for music, across different webpages?
+
+- [ ] 
+  ```php
+    1 <?php
+    2 start_session();
+    3 $music = $_SESSION['music'];
+    4 ?>
+  ```
+- [ ] 
+  ```php
+    1 <?php
+    2    session_start();
+    3    $music = $SESSION['music'];
+    4 ?>
+  ``` 
+- [ ] 
+  ```php
+    1 <?php
+    2   start_session();
+    3   $music =$session['music'];
+    4 ?>
+  ```
+- [x] 
+  ```php
+    1 <?php
+    2  session_start();
+    3  $music = $_SESSION['music'];
+    4 ?>
+  ```
+  
+##### Q61. Which PHP script finds the earliest and latest dates from an array?
+
+- [x] 
+  ```php
+    1 <?php
+    2 $dates = array('2018-02-01', '2017-02-02', '2015-02-03');
+    3 echo "Latest Date: ". max($dates)."\n";
+    4 echo "Earliest Date: ". min($dates)."\n";
+    5 ?>
+  ```
+- [ ] 
+  ```php
+    1 <?php
+    2 $dates = array('2018-02-01', '2017-02-02', '2015-02-03');
+    3 echo "Latest Date: ". min($dates)."\n";
+    4 echo "Earliest Date: ". max($dates)."\n";
+    5 ?>
+  ``` 
+- [ ] 
+  ```php
+    1 <?php
+    2 $dates = array('2018-02-01', '2017-02-02', '2015-02-03');
+    3 echo "Latest Date: ". ($dates)."\n";
+    4 echo "Earliest Date: ". ($dates)."\n";
+    5 ?>
+  ```
+- [ ] 
+  ```php
+    1 <?php
+    2 $dates = array('2018-02-01', '2017-02-02', '2015-02-03');
+    3 echo "Latest Date: " max($dates)."\n";
+    4 echo "Earliest Date: " min($dates)."\n";
+    5 ?>
+  ```
+
+##### Q62. What is the resulting output of this for statement?
+
+```php
+1  $kilometers = 1;
+2 for (;;) {
+3    if ($kilometers > 5) break;
+4       echo "$kilometers kilometers = ".$kilometers*0.62140. " miles. <br />";
+5    $kilometers++;
+6  }
+```
+
+- [x] 
+  ```php
+    1 kilometers = 0.6214 miles.
+    2 kilometers = 1.2428 miles.
+    3 kilometers = 1.8642 miles.
+    4 kilometers = 2.4856 miles.
+    5 kilometers = 3.107 miles.
+  ```
+- [ ] 
+  ```php
+    1 kilometers = 0.6214 miles.
+    2 kilometers = 1.2428 miles.
+    3 kilometers = 1.8642 miles
+    4 kilometers = 2.4856 miles.
+    5 kilometers = 3.107 miles.
+    6 kilometers = 3.7284 miles.
+  ``` 
+- [ ] 
+  ```php
+    2 kilometers = 1.2428 miles.
+    3 kilometers = 1.8642 miles.
+    4 kilometers = 2.4856 miles.
+    5 kilometers = 3.107 miles.
+  ```
+- [ ] FATAL ERROR syntax error, unexpected ')', expecting ';' on line number 2
+
+##### Q63. In PHP 7, What is the correct way to import multiple classes from namespace in a single declaration ?!
+
+- [x] use myApp\myNamespace\{ClassA, ClassB, ClassC};
+- [ ] use myApp\myNamespace\ClassA, ClassB, ClassC;
+- [ ] use myApp\myNamespace\[ClassA, ClassB, ClassC];
+- [ ] use myApp\myNamespace\(ClassA, ClassB, ClassC);
+
+##### Q64.Which is the most complete list of data types that PHP supports?
+
+- [x] string, integer, float, boolean, array, object, NULL, resource
+- [ ] string, integer, boolean, array, object, NULL, resource
+- [ ] string, integer, float, array, object, NULL, resource
+- [ ] string, integer, float, boolean, array, object, NULL
+
+[reference](https://www.w3schools.com/php/php_datatypes.asp)
+
+##### Q65. What type of computer language is PHP?
+
+- [x] server-side scripting language
+- [ ] compiled language
+- [ ] machine language
+- [ ] algorithmic language
+
+[reference](https://www.quora.com/Which-programming-language-is-used-to-create-PHP)
+
+
+##### Q66.Which superglobal variable holds information about headers, paths, and script locations?
+
+- [x] $_SERVER
+- [ ] $SERVER_VARIABLES
+- [ ] $_ENV
+- [ ] $GLOBALS
+
+[reference](http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/php/php_superglobals.asp.html)
+

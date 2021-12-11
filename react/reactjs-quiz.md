@@ -452,7 +452,7 @@ class Huggable extends React.Component {
 - [ ] `<button onClick={(name) => this.hug(name)}>Hug Button</button>`
 - [ ] `<button onClick={this.hug(e, name)}>Hug Button</button>`
 - [ ] `<button onClick={(e) => hug(e, name)}>Hug Button</button>`
-- [x] `<button onClick={() => this.hug(name)}>Hug Button</button>`
+- [x] `<button onClick={(e) => this.hug(name,e)}>Hug Button</button>`
 
 #### Q47. Currently, `handleClick` is being called instead of passed as a reference. How do you fix this?
 
@@ -678,7 +678,7 @@ useEffect(() => {
 <Route path="/:id" />
 ```
 
-- [x]
+- [x] A
 
 ```javascript
 <Route path="/:id">
@@ -687,19 +687,19 @@ useEffect(() => {
 </Route>
 ```
 
-- [ ]
+- [ ] B
 
 ```javascript
 <Route path="/tid" about={Component} />
 ```
 
-- [ ]
+- [ ] C
 
 ```javascript
 <Route path="/:id" route={About} />
 ```
 
-- [ ]
+- [ ] D
 
 ```javascript
 <Route>
@@ -713,32 +713,42 @@ useEffect(() => {
 const Greeting ({ name }) > <h1>Hello {name}!</h1>;
 ```
 
-- [ ]
+- [ ] A
 
 ```javascript
 class Greeting extends React.Component {
   constructor() {
-    return <h1>Hello (this.props.name)!</h1>;
+    return <h1>Hello {this.props.name}!</h1>;
   }
 }
 ```
 
-- [x]
+- [ ] B
 
 ```javascript
-    class Greeting extends React.Component { <h1>Hello {this.props.name}!</h1>; }
+class Greeting extends React.Component {
+  <h1>Hello {this.props.name}!</h1>;
+}
 ```
 
-- [ ]
+- [x] C
 
 ```javascript
-   class Greeting extends React.Component { return <h1>Hello (this.props.name) 1</h1>; }
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello {this.props.name}!</h1>;
+  }
+}
 ```
 
-- [ ]
+- [ ] D
 
 ```javascript
-class Greeting extends React.Component ( render({ name }) {return <h1>Hello (name)} !</h1>;})
+class Greeting extends React.Component {
+  render({ name }) {
+    return <h1>Hello {name}!</h1>;
+  }
+}
 ```
 
 #### Q66. Give the code below, what does the second argument that is sent to the render function describe?
@@ -826,7 +836,7 @@ This question might be an updated version of Q37.
 #### Q73. When using a portal, what is the first argument?
 
 ```javascript
-ReactDOM.createPortal(x, y)
+ReactDOM.createPortal(x, y);
 ```
 
 - [ ] the current state
@@ -836,3 +846,94 @@ ReactDOM.createPortal(x, y)
 
 **Explanation:**
 From official docs: [Portals](https://reactjs.org/docs/portals.html)
+
+#### Q74. What is `setCount`?
+
+```javascript
+const [count, setCount] = useState(0);
+```
+
+- [ ] the initial state value
+- [ ] a variable
+- [ ] a state object
+- [x] a function to update the state
+
+**Reference:**
+From official docs: [Hooks-State](https://reactjs.org/docs/hooks-state.html#:~:text=If%20we%20want%20to%20update%20the%20current)
+
+#### Q75. What is the use of map function below?
+
+```javascript
+const database = [user1:{},user2:{},user3:{}];
+database.map((user)=><h1>user.data</h1>);
+```
+
+- [ ] gives a map of all the entries in database
+- [x] returns a heading tag for every entry in the database containing it's data
+- [ ] returns one heading tag for all the entries in database
+- [ ] checks which entry in the database is suitable for heading tag
+
+#### Q76. Describe what is happening in this code?
+
+```javascript
+const { name: firstName } = person;
+```
+
+- [ ] It is creating a new object that contains the same name property as the person object.
+- [ ] It is assigning the value of the person object's firstName property to a constant called name.
+- [ ] It is retrieving the value of person.name.firstName.
+- [x] It is assigning the value of the person object's name property to a constant called firstName.
+
+#### Q77. What is wrong with this code?
+
+```javascript
+const MyComponent = ({ names }) => (
+  <h1>Hello</h1>
+  <p>Hello again</p>
+);
+```
+
+- [ ] React components cannot be defined using functions.
+- [x] React does not allow components to return more than one element.
+- [ ] The component needs to use the return keyword.
+- [ ] String literals must be surrounded by quotes.
+
+#### Q78. When using a portal, what is the second argument?
+
+```javascript
+ReactDOM.createPortal(x, y);
+```
+
+- [ ] the App component
+- [ ] the page
+- [ ] the current state
+- [x] the DOM element that exists outside of the parent component
+
+#### Q79. Given this code, what will be printed in the <h1> tag?
+
+```javascript
+const MyComponent = ({ children }) => (
+  <h1>{children.length}</h1>
+);
+...
+<MyComponent>
+<p>Hello</p>
+<p>Goodbye</p>
+</MyComponent>
+```
+
+- [ ] It will produce an error saying "cannot read property "length" of undefined."
+- [ ] 1
+- [ ] undefined
+- [x] 2
+
+### Q80. What is this pattern called?
+
+```javascript
+const [count, setCount] = useState(0);
+```
+
+- [ ] object destructuring
+- [x] array destructuring
+- [ ] spread operating
+- [ ] code pushing

@@ -335,3 +335,17 @@ D. They must have no duplicate data rows.
 - [ ] SUM
 - [ ] PICARD
 - [ ] COMPARE
+
+#### Q44. Which feature is `not` in the Power BI Admin portal?
+
+- [ ] usage metrics
+- [ ] organization visuals
+- [x] Dashboard Manager
+- [ ] audit logs
+
+#### Q45. You want to count the number of products in the Products data table. Which DAX function works best?
+
+- [ ] RECOUNT
+- [ ] COUNTUNIQUE
+- [x] COUNTX
+- [ ] COUNTROWS

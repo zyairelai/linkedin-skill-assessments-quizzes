@@ -508,20 +508,20 @@ aws ec2 associate-address --instance-id i-8b953 --allocation-id eipalloc-02d021a
 
 #### Q63. Your application performance management (APM) system can read the status of your CloudWatch monitors and perform scripted actions. When the CloudWatch metric StatusCheckFailed enters a failed state (a value of 1), you would like your APM to automatically repair the instance. Which script do you use?
 
-- [x]
+- [x] A
 
 ```
 aws ec2 stop-instances --instance-ids i-0b263919b6498b123
 aws ec2 start-instances --instance-ids i-0b263919b6498b123
 ```
 
-- [ ]
+- [ ] B
 
 ```
 aws ec2 reboot-instances --instance-ids i-0b263919b6498b123
 ```
 
-- [ ]
+- [ ] C
 
 ```
 aws ec2 reboot-instances --instance-ids i-0b263919b6498b123
@@ -529,19 +529,17 @@ wait 30
 aws ec2 start-instance --instance-ids i-0b263919b6498b123
 ```
 
-- [ ]
+- [ ] D
 
 ```
 aws ec2 reboot-instances --instance-ids i-0b263919b6498b123
 aws ec2 start-instances --instance-ids i-0b263919b6498b123
 ```
 
-#### Q64. What is wrong with the third incoming security group rule, which allows all traffic from sg-269afc5e to go to an
-
-Ubuntu EC2 instance configured as a web server?
+#### Q64. What is wrong with the third incoming security group rule, which allows all traffic from sg-269afc5e to go to an Ubuntu EC2 instance configured as a web server?
 
 - [ ] All traffic on all ports is being denied into this instance, which overwrites the HTTP rule and makes it redundant.
-- [ ] The instance was launched with the default security group, but there is no way for an administrator to SSH into the instance.
+- [x] The instance was launched with the default security group, but there is no way for an administrator to SSH into the instance.
       Add another rule that allows for SSH access from a secured source, such as a single IP or a range of managed IP addresses.
 - [ ] There is nothing wrong with this security group rule. Assuming that sg-269afc5e is applied to other resources that are properly
       secured, this rule allows all traffic to pass through that is also assigned security group sg-269afc5e.
@@ -662,14 +660,14 @@ aws ecs create-service \
  --service-name rest-api \
  --task-definition rest-api:1 \
  --desired-count 2 \
- --launch-type "FARGET" \
+ --launch-type "FARGATE" \
  --network-configuration \
  "awsvpcConfiguration={subnets=[subnet-0b29129ab],securityGroups=[sg-0b29129ab]}"
 ```
 
 - [ ] changes the security groups of the running **rest-api** task
-- [ ] creates a cluster called **production** and launches two containers into Farget with the **rest-api** task definition
-- [ ] launches two containers onto Farget into the existing **production** cluster using the **rest-api** task definition
+- [ ] creates a cluster called **production** and launches two containers into Fargate with the **rest-api** task definition
+- [x] launches two containers onto Fargate into the existing **production** cluster using the **rest-api** task definition
 - [ ] creates a service definition for the **rest-api** task; put two containers on the production cluster when launched **ecs-cli** up command
 
 #### Q73. You want to make your public API quickly accessible from all regions. What is the best way to do this?
@@ -689,6 +687,33 @@ aws ecs create-service \
 #### Q75. You have an analytics suite that produces reports about the usage patterns of your web application. After completing your migration to AWS and using Application Load Balancer to balance the load across your web application, your marketing department noticed that location-based reports on the web traffic only show traffic originating from a single location. What is the problem?
 
 - [ ] Use a Classic Load Balancer, not Application Load Balancer.
-- [ ] Application Load Balancer does not preserve the original source IP address. The analytics software needs to be configured to look at the 'X-Forwarded-For' HTTP request header for the correct source IP address.
+- [x] Application Load Balancer does not preserve the original source IP address. The analytics software needs to be configured to look at the 'X-Forwarded-For' HTTP request header for the correct source IP address.
 - [ ] Application Load Balencer has to be configured to retain the source IP address of the traffic it is forwarding. Create a policy that enables ProxyProtocol support and attach it to the ALB using the AWS CLI.
 - [ ] Configure the web server EC2 instances to only have private IP addresses. The public IP addresses of the instances are being recorded into the web server logs, bug only ALB should have a public interface and it will route traffic to instances via the private interface.
+
+#### Q76. What is `not` a default user of a common Linux instance launched from an AMI?
+
+- [ ] ubuntu
+- [x] system-user
+- [ ] ec2-user
+- [ ] admin
+
+[Reference](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)
+
+#### Q77. You have replicated the infrastructure that serves the backend API for your web application across regions to better serve your customers in the US and the EU. What is the best way to direct your web application at the nearest data center?
+
+- [x] Use Route 53 with geolocation lookups to direct traffic between the two regions.
+- [ ] Create a WAF redirection rule that redirects traffic at the EU data center if the source IP comes from certain countries.
+- [ ] Purchase a country domain extension and direct your users to the correct site, such as example.com and example.co
+- [ ] Have your front-end application test the latency between each data center and use the data center that is responding the fastest.
+
+[Reference](https://aws.amazon.com/premiumsupport/knowledge-center/geolocation-routing-policy/)
+
+#### Q78. You have recently launched your new web product and are expecting 1.000 new users each month. However, you have just received word from the CEO that your product will be featured at an upcoming conference covered by several media outlets, and this could lead to 20,000 new users over the next week. How do you plan for a sudden increase in traffic?
+
+- [ ] Replicate your infrastructure across two regions. You will harden the application to a regional failure and you will double your capacity.
+- [ ] Take an AMI image of a front-end server to save your configuration and then add more servers to your cluster pror to the conference. Remove the servers from the cluster after the spike from the conference.
+- [ ] Test to determine your throughput and how many users you can support. Develop a scaling plan for your front end, microservices, and database based on CloudWatch metrics that align with the tested bottlenecks.
+- [x] Use Auto Scaling groups to create more front-end servers when the CloudWatch metrics for CPU usage on a single instance rise above 80% for five minutes.
+
+[Reference](https://aws.amazon.com/ec2/autoscaling/)
