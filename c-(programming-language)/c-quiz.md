@@ -188,6 +188,8 @@ for (i= 10; i>0; i--){
 - [ ] register
 - [ ] typedef
 
+[Reference](https://www.ibm.com/docs/en/adfz/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords)
+
 #### Q10. What does the program shown below return?
 
 ```c
@@ -242,6 +244,8 @@ main(){
 - [x] main() { }
 - [ ] main() { ; }
 
+[Reference](https://www.beningo.com/150-the-wolrds-shortest-c-program/)
+
 #### Q14. What is optional in a function declaration?
 
 - [ ] data type of parameters
@@ -263,12 +267,16 @@ main(){
 - [x] heap
 - [ ] data segment
 
+[Reference](http://www.it.uc3m.es/pbasanta/asng/course_notes/dynamic_memory_heap_en.html#:~:text=The%20dynamic%20memory%20that%20is,reads%20a%20set%20of%20words.)
+
 #### Q17. Which of the following do you use to deallocate memory?
 
 - [ ] dalloc()
 - [ ] dealloc()
 - [ ] release()
 - [x] free()
+
+[Reference](https://www.tutorialspoint.com/c_standard_library/c_function_free.htm)
 
 #### Q18. In C language what are the basic building blocks that are constructed together to write a program?
 
@@ -451,3 +459,86 @@ printf("%d", f1(5));
 - [x] `char string = "Hello World";`
 - [ ] `char string[20] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};`
 - [ ] `char string[] = "Hello World";`
+
+#### Q35. Which choice is an include guard for the header file mylib.h?
+
+- [ ]
+
+```c
+#ifdef MYLIB_H
+#undef MYLIB_H
+
+// mylib.h content
+
+#endif /* MYLIB_H */
+```
+
+- [x]
+
+```c
+#ifndef MYLIB_H
+#define MYLIB_H
+
+// mylib.h content
+
+#endif /* MYLIB_H */
+```
+
+- [ ]
+
+```c
+#define MYLIB_H
+#include "mylib.h"
+
+#undef MYLIB_H
+```
+
+- [ ]
+
+```c
+#ifdef MYLIB_H
+#define MYLIB_H
+
+// mylib.h content
+
+#endif /* MYLIB_H */
+```
+
+#### Q36. How many times does the code inside the while loop get executed in this program?
+
+```c
+main(){
+ int x=1;
+ while(x++<100){
+    x*=x;
+    if(x<10) continue;
+    if(x>50) break
+ }
+}
+```
+
+- [ ] 100
+- [x] 3
+- [ ] 5
+- [ ] 50
+
+#### Q37. File input and output (I/O) in C is done through what?
+
+- [ ] syntax-driven components
+- [ ] native interfaces
+- [ ] system objects
+- [x] function calls
+
+#### Q38. Directives are translated by the?
+
+- [x] Pre-processor
+- [ ] Compiler
+- [ ] Linker
+- [ ] Editor
+
+#### Q39. The main loop structures in C programming are the for loop, the while loop, and which other loop?
+
+- [x] do...while
+- [ ] for...in
+- [ ] repeat...until
+- [ ] do...until

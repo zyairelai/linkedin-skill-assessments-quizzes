@@ -72,7 +72,7 @@ git cherry-pick kj2342134sdf090093f0sdgasdf99sdfo992mmmf9921231
 - [ ] A commit is being copied from the feature-user-location branch to the master branch
 - [ ] The branch is switched to the feature-user-location branch, and the specified commit is applied to the branch.
 
-**Explanation:** `Commits aren't copied when cherry picking, they are cherry picked. The changes introduced by the commit are applied and a new commit is then created. This allow us to get specific changes as if they were patches (in the GIT's book, this is actually called [Patching](https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching "See this in the GIT's book")). As a new commit is created upon feature-user-location, HEAD also changes to match it. You can see this in `cat .git/HEAD`and`cat .git/refs/heads/feature-user-location`for this case. See`man git-cherry-pick` for details.`
+**Explanation:** Commits aren't copied when cherry picking, they are cherry picked. The changes introduced by the commit are applied and a new commit is then created. This allow us to get specific changes as if they were patches (in the GIT's book, this is actually called [Patching](https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Patching "See this in the GIT's book")). As a new commit is created upon feature-user-location, HEAD also changes to match it. You can see this in `cat .git/HEAD` and `cat .git/refs/heads/feature-user-location` for this case. See `man git-cherry-pick` for details.
 
 **NOTE**: There are two versions of this question so far. The task is always "describe what is happening", the commands are always a `checkout` and a `cherry-pick`, and the correct answer is always the same.
 
@@ -190,29 +190,29 @@ modified: beta-notes.js
 
 #### Q20. What commands would you use to force an overwrite of your local files with the master branch?
 
-- [ ]
+- [ ] ⠀
   ```bash
   git pull --all
   git reset --hard origin/master
   ```
-- [ ]
+- [ ] ⠀
   ```bash
   git pull -u origin master
   git reset --hard master
   ```
-- [ ]
+- [ ] ⠀
   ```bash
   git pull origin master
   git reset --hard origin/myCurrentBranch
   ```
-- [x]
+- [x] ⠀
 
   ```bash
   git fetch --all
   git reset --hard origin/master
   ```
 
-- `The command `pull`is`fetch`followed by either`merge`or`rebase`(in this case,`merge`). We don't want to merge. Merge would be an action to our **repository**. We just want to overwrite our **local files**.`
+- The command `pull` is `fetch` followed by either `merge` or `rebase` (in this case, `merge`). We don't want to merge. Merge would be an action to our **repository**. We just want to overwrite our **local files**.
 
 #### Q21. Which statement is true when you use the git add -A command?
 
@@ -282,7 +282,7 @@ git push -u origin master
 - [ ] Run git hotfix with the shortcut name.
 - [ ] Assign a shortcut or command using git options file.
 - [ ] Use the git custom-key command.
-- [x] Create an alias in the git config file.
+- [x] Create an alias usin the git config command.
 
 #### Q29. What is the status of the beta-notes.js file in the following output?
 
@@ -759,14 +759,34 @@ Which of the following options is correct ?
 
 #### Q93. You would like to restore some previously stashed work to a new branch. How can you do that?
 
-- [x] Use `git branch <stash hash>`.
+- [ ] Use git branch <stash hash>.
 - [ ] Add the stashed commits to the current commit, then create a new branch.
-- [ ] Use `git checkout -b`.
-- [ ] Run `git stash branch <branch name>`.
+- [ ] Use git checkout -b.
+- [x] Run git stash branch <branch name>.
 
-#### Q94. You is the difference between git branch -d and git branch -D?
+[reference here](https://stackoverflow.com/questions/6925099/git-stash-changes-apply-to-new-branch)
+
+#### Q94. What is the difference between git branch -d and git branch -D?
 
 - [ ] -D deletes the local branch, while -d deletes the branch regardless of push and merge status.
 - [ ] -d deletes the current commit head, while -D deletes the entire branch.
 - [x] -d deletes the local branch, while -D deletes the local branch regardless of push and merge status.
 - [ ] -D deletes the current commit head, while -d deletes the entire branch.
+
+#### Q95. You stashed three sets of changes but cannot remember the contents of the first stash entry. What command would you use to see the details of the changes in the first of the three stash entries?
+
+- [x] git stash show -p stash@{2}
+- [ ] git stash list
+- [ ] git stash show -p stash@{1}
+- [ ] git stash show -p
+
+[reference here](https://stackoverflow.com/questions/10725729/see-whats-in-a-stash-without-applying-it)
+
+#### Q96. Which statement is true of the git push command?
+
+- [x] By default, a push doesn't send tags to the remote repository.
+- [ ] Only annotated tags are automatically pushed to the remote repository with a commit.
+- [ ] Tags are pushed to the remote repository with their respective commits.
+- [ ] Commits can be tagged only when they are created.
+
+[reference here](https://git-scm.com/book/en/v2/Git-Basics-Tagging)

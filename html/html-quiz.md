@@ -90,7 +90,7 @@
 
 ![Sample text](images/ss-2.png?raw=true)
 
-- [ ]
+- [ ] A
 
 ```html
 <details>
@@ -101,7 +101,7 @@
 </details>
 ```
 
-- [ ]
+- [ ] B
 
 ```html
 <h4>▸ Parmesan Deviled Eggs</h4>
@@ -110,7 +110,7 @@
 </p>
 ```
 
-- [x]
+- [x] C
 
 ```html
 <details open>
@@ -121,7 +121,7 @@
 </details>
 ```
 
-- [ ]
+- [ ] D
 
 ```html
 <details>
@@ -173,25 +173,25 @@
 
 #### Q18. What is the correct markup for `alt` attribute of an image?
 
-- [ ]
+- [ ] A
 
 ```html
 <img src="cubism.jpg" alt="Version of ""Whistler's Mother"" in cubist style">
 ```
 
-- [ ]
+- [ ] B
 
 ```html
 <img src="cubism.jpg" alt="Version of "Whistler's Mother" in cubist style">
 ```
 
-- [x]
+- [x] C
 
 ```html
 <img src="cubism.jpg" alt='Version of "Whistler\'s Mother" in cubist style'>
 ```
 
-- [ ]
+- [ ] D
 
 ```html
 <img src="cubism.jpg" alt="Version of \"Whistler's Mother\" in cubist style">
@@ -214,7 +214,7 @@
 On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap for mankind."
 ```
 
-- [x]
+- [x] A
 
 ```markdown
 <p>
@@ -225,7 +225,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </p>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
 <p>
@@ -236,7 +236,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </p>
 ```
 
-- [ ]
+- [ ] C
 
 ```markdown
 <p>
@@ -244,7 +244,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </p>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <p>
@@ -277,7 +277,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 
 #### Q23. What is the best way to code three choices within a form so that the user can select only one item?
 
-- [ ]
+- [ ] A
 
 ```markdown
 <label for="example">Make a choice:</label>
@@ -289,7 +289,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </datalist>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
 <p>Make a choice:</p>
@@ -302,7 +302,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </datalist>
 ```
 
-- [ ]
+- [ ] C
 
 ```markdown
 <label for="example">Make a choice:</label>
@@ -315,7 +315,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </datalist>
 ```
 
-- [x]
+- [x] D
 
 ```markdown
 <label for="example">Make a choice:</label>
@@ -354,7 +354,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 
 ![Table with yellow background](images/ss-4.png?raw=true)
 
-- [ ]
+- [ ] A
 
 ```markdown
 <table>
@@ -372,7 +372,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </table>
 ```
 
-- [x]
+- [x] B
 
 ```markdown
 <table>
@@ -390,7 +390,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </table>
 ```
 
-- [ ]
+- [ ] C
 
 ```markdown
 <table>
@@ -408,7 +408,7 @@ On July 21, 1969, Neil Armstrong said, "One small step for man, one giant leap f
 </table>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <table>
@@ -455,7 +455,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 #### Q29. Which HTML snippet links back to the very top of a webpage?
 
-- [x]
+- [x] A
 
 ```markdown
 <a id="top"></a>
@@ -465,7 +465,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 <a href="#top">back to top</a>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
 <a name="top"></a>
@@ -475,13 +475,13 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 <a href="#top">back to top</a>
 ```
 
-- [ ]
+- [ ] C
 
 ```markdown
 <a href="#">back to top</a> <a href="#top">back to top</a>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <button href="#">back to top</button> <button href="#top">back to top</button>
@@ -494,12 +494,16 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 - [ ] `<hgroup> <q> <wbr>`
 - [ ] `<b> <i> <u>`
 
-#### Q31. The **\_** tag is used for marking up a short code snippet, while the **\_** tag is used for marking up a longer block of code.
+#### Q31. The **\_** tag is used for marking up a short code snippet, while the **\_** tag is used for marking up a longer block of code
 
 - [ ] `<kdb>`, `<pre>`
 - [ ] `<pre>`, `<code>`
 - [ ] `<kdb>`, `<mark>`
 - [x] `<code>`, `<pre>`
+
+[Source: MDN Web Docs code](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code)
+
+[Source: MDN Web Docs pre](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre)
 
 #### Q32. What does the `<label>` tag do?
 
@@ -508,7 +512,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 - [ ] It visually labels from fields.
 - [x] It programmatically associates a text label with an interface element.
 
-#### Q33. To get a link to open in a new window or tab, use the **\_** attribute.
+#### Q33. To get a link to open in a new window or tab, use the **\_** attribute
 
 - [x] `_blank`
 - [ ] `_self`
@@ -519,25 +523,25 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 **We are fond of our TLAs in web design.**
 
-- [ ]
+- [ ] A
 
 ```html
 <p>We are fond of our <span title="three-letter acronyms">TLAs</span> in web design.</p>
 ```
 
-- [ ]
+- [ ] B
 
 ```html
 <p>We are fond of our TLAs in web design.</p>
 ```
 
-- [x]
+- [x] C
 
 ```html
 <p>we are fond of our <abbr title="three-letter acronyms">TLAs</abbr> in web design.</p>
 ```
 
-- [ ]
+- [ ] D
 
 ```html
 <p>we are fond of our <acronym title="three-letter acronym">TLAs</acronym> in web design.</p>
@@ -549,7 +553,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 ![Sample list](images/ss-6.png?raw=true)
 
-- [ ]
+- [ ] A
 
 ```markdown
 <ul>
@@ -569,7 +573,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </ul>
 ```
 
-- [x]
+- [x] B
 
 ```markdown
 <ul>
@@ -587,7 +591,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </ul>
 ```
 
-- [ ]
+- [ ] C
 
 ```markdown
 <ul>
@@ -614,7 +618,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 ![quote](images/ss-5.png?raw=true)
 
-- [ ]
+- [ ] A
 
 ```markdown
 <p>
@@ -624,7 +628,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 <p><em>Lynda Weinman</em></p>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
 <blockquote>
@@ -636,7 +640,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </blockquote>
 ```
 
-- [x]
+- [x] C
 
 ```markdown
 <blockquote>
@@ -648,7 +652,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </blockquote>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <section>
@@ -721,7 +725,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 ![Table](images/ss-1.png?raw=true 'table')
 
-- [ ]
+- [ ] A
 
 ```markdown
 <tr>
@@ -733,7 +737,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </tr>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
 <tr>
@@ -743,7 +747,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </tr>
 ```
 
-- [x]
+- [x] C
 
 ```markdown
 <tr>
@@ -755,7 +759,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </tr>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <tr>
@@ -776,7 +780,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 #### Q48. Which form is coded correctly?
 
-- [ ]
+- [ ] A
 
 ```markdown
 <form>
@@ -789,7 +793,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </form>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
 <form>
@@ -802,7 +806,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </form>
 ```
 
-- [x]
+- [x] C
 
 ```markdown
 <form>
@@ -815,7 +819,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </form>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <form>
@@ -911,18 +915,14 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 #### Q59. Review the code below. How do you include subnavigation for Link 2 that includes a link?
 
 ```markdown
-<ul>
-  <li><!a href="#">Link 1</a></li>
-  <li><!a href="#">Link 2</a>
-    <ul>
-      <li><!a href="#">Link 2a</a></li>
-    </ul>
-  </li>
-  <li><!a href="#">Link 3</a></li>
-</ul>
+<nav><ul>
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 2</a></li>
+  <li><a href="#">Link 3</a></li> 
+</ul></nav>
 ```
 
-- [ ]
+- [ ] A
 
 ```markdown
 <nav><ul>
@@ -935,7 +935,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </ul></nav>
 ```
 
-- [x]
+- [x] B
 
 ```markdown
 <nav><ul>
@@ -949,7 +949,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </ul></nav>
 ```
 
-- [ ]
+- [ ] C
 
 ```markdown
 <ul><nav>
@@ -963,7 +963,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </nav></ul>
 ```
 
-- [ ]
+- [ ] D
 
 ```markdown
 <nav><ul>
@@ -1074,7 +1074,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </table>
 ```
 
-- [ ]
+- [ ] A
 
 ```HTML
 <caption>A table</caption>
@@ -1086,7 +1086,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
   </table>
 ```
 
-- [ ]
+- [ ] B
 
 ```HTML
 <caption>A table</caption>
@@ -1098,7 +1098,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </table>
 ```
 
-- [X]
+- [x] C
 
 ```HTML
 <table>
@@ -1110,7 +1110,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 </table>
 ```
 
-- [ ]
+- [ ] D
 
 ```HTML
 <table>
@@ -1142,7 +1142,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 
 #### Q73. Which list comprises three empty elements?
 
-- [ ]
+- [ ] A
 
 ```HTML
 <area>
@@ -1150,7 +1150,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 <strong>
 ```
 
-- [ ]
+- [ ] B
 
 ```HTML
 <input>
@@ -1158,7 +1158,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 <p>
 ```
 
-- [ ]
+- [ ] C
 
 ```HTML
 <link>
@@ -1166,7 +1166,7 @@ From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr): The HT
 <title>
 ```
 
-- [X]
+- [x] D
 
 ```HTML
 <wbr>
@@ -1208,7 +1208,12 @@ As Steve Krug once said, happy talk must die.
 - [ ] `<p>`As Steve Krug once said, `<b>`happy talk must die.`</b>` `</p>`
 - [ ] `<p>`As Steve Krug once said, `<i>`happy talk must die.`</i>` `</p>`
 - [ ] `<p>`As Steve Krug once said, `<blockquote>`happy talk must die.`</blockquote>` `</p>`
-- [ ] `<p>`As Steve Krug once said, `<q>`happy talk must die.`</q>` `</p>`
+- [x] `<p>`As Steve Krug once said, `<q>`happy talk must die.`</q>` `</p>`
+
+[Source: W3Schools](https://www.w3schools.com/tags/tag_q.asp)
+
+**`<q>` tag**
+`Most browsers will display q tags as inline elements with quotes`
 
 #### Q78. What is the most semantically accurate way to make up a main navigation bar, displayed in a horizontal direction?
 
@@ -1220,7 +1225,7 @@ As Steve Krug once said, happy talk must die.
 </p>
 ```
 
-- [ ]
+- [ ] A
 
 ```markdown
 <nav>
@@ -1230,7 +1235,7 @@ As Steve Krug once said, happy talk must die.
 </nav>
 ```
 
-- [ ]
+- [ ] B
 
 ```markdown
  <nav>
@@ -1242,7 +1247,7 @@ As Steve Krug once said, happy talk must die.
   </nav>
 ```
 
-- [x]
+- [x] C
 
 ```markdown
  <nav>
@@ -1258,47 +1263,53 @@ As Steve Krug once said, happy talk must die.
 
 ![Image of footer](images/ss-8.png?raw=true)
 
+- [ ] A
+
+```markdown
+<h4>Mailing Address</h4>
+<address>
+  6410 Via Real <br>
+  Carpinteria, CA 93013<br>
+  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
+</address>
+```
+
+- [x] B
+
+```markdown
+<h4><strong>Mailing Address</h4>
+<address><em>
+  6410 Via Real <br>
+  Carpinteria, CA 93013<br>
+  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
+</em></address>
+```
+
+- [ ] C
+
+```markdown
+<h4>Mailing Address</h4>
+<p><em>
+  6410 Via Real <br>
+  Carpinteria, CA 93013<br>
+  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
+</em></p>
+```
+
+- [ ] D
+
 ```markdown
 <p><strong>Mailing Address</strong></p>
-  <p><em>
-    6640 via Real <br>
-    <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-  </em></p>
-</p>
+<p><em>
+  6410 Via Real <br>
+  Carpinteria, CA 93013<br>
+  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
+</em></p>
 ```
 
-- [ ]
+[Source: W3Schools](https://www.w3schools.com/tags/tag_address.asp)
 
-```markdown
-<h4>Mailing Address</h4>
-  <address>
-    6640 via Real <br>
-    <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-  </address>
-```
-
-- [ ]
-
-```markdown
-<h4><strong>Mailing Address</strongh></h4>
-  <address><em>
-    6640 via Real <br>
-    <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-  </em></address>
-```
-
-- [ ]
-
-```markdown
-<h4>Mailing Address</h4>
-  <p><em>
-    6640 via Real <br>
-    <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-  </em></p>
-</p>
-```
-
-- [ ]
+`The <address> tag defines the contact information for the author/owner of a document or an article. The contact information can be an email address, URL, physical address, phone number, social media handle, etc. The text in the <address> element usually renders in italic, and browsers will always add a line break before and after the <address> element.`
 
 #### Q80. What is the primary purpose of HTML?
 
@@ -1327,53 +1338,7 @@ As Steve Krug once said, happy talk must die.
 
 [Reference (MDN)](https://www.w3schools.com/tags/tag_noscript.asp)
 
-#### Q83.
-
-- [ ]
-
-```markdown
-<h4>Mailing Address</h4>
-<address>
-  6410 Via Real <br>
-  Carpinteria, CA 93013<br>
-  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-</address>
-```
-
-- [ ]
-
-```markdown
-<h4><strong>Mailing Address</h4>
-<address><em>
-  6410 Via Real <br>
-  Carpinteria, CA 93013<br>
-  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-</em></address>
-```
-
-- [ ]
-
-```markdown
-<h4>Mailing Address</h4>
-<p><em>
-  6410 Via Real <br>
-  Carpinteria, CA 93013<br>
-  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-</em></p>
-```
-
-- [ ]
-
-```markdown
-<p><strong>Mailing Address</strong></p>
-<p><em>
-  6410 Via Real <br>
-  Carpinteria, CA 93013<br>
-  <a href="mailto:info@linkedin.com">info@linkedin.com</a>
-</em></p>
-```
-
-#### Q84. How will this code render by default in most web browsers?
+#### Q83. How will this code render by default in most web browsers?
 
 ```markdown
 <details>
@@ -1390,3 +1355,171 @@ As Steve Krug once said, happy talk must die.
       ![C](images/Q84-3.jpg)
 - [ ] D
       ![D](images/Q84-4.jpg)
+
+#### Q84. In this code, what is _target_?
+
+- [x] an attribute
+- [ ] a tag
+- [ ] content
+- [ ] an element
+
+#### Q85. What is the difference between the `<svg>` and `<canvas>`?
+
+- [x] `<svg>` produces vector graphics, while `<canvas>` produces raster graphics.
+- [ ] `<svg>` integrates with JavaScript, while `<canvas>` does not.
+- [ ] `<svg>` produces raster graphics, while `<canvas>` produces vector graphics.
+- [ ] `<svg>` cannot be used as a background image, while `<canvas>` can be used as a background
+
+#### Q86. What is the difference between the _readonly_ and _disabled_ attributes for the `<textarea>` element?
+
+- [x] _readonly_ allows clicking in the `<textarea>` element. _disabled_ prevents all interaction with the control.
+- [ ] _readonly_ is invalid attribute for `<textarea>`, while _disabled_ is a valid attribute.
+- [ ] _disabled_ allows clicking in the `<textarea>` element. _readonly_ prevents all interaction with the control.
+- [ ] _disabled_ is invalid attribute for `<textarea>`, while _readonly_ is a valid attribute.
+
+[Source: readonly](https://www.w3schools.com/tags/att_readonly.asp)
+
+[Source: disabled](https://www.w3schools.com/tags/att_disabled.asp)
+
+#### Q87. In this code, what is _target_?
+
+`<a target="_blank">...</a>`
+
+- [x] an attribute
+- [ ] a tag
+- [ ] content
+- [ ] an element
+
+#### Q88. What is the correct way to add a submit URL to a button element?
+
+- [ ] A
+
+```HTML
+<button submit="http://example.com/process">
+      Process data
+</button>
+```
+
+- [ ] B
+
+```HTML
+<button action="http://example.com/process">
+      Process data
+</button>
+```
+
+- [x] C
+
+```HTML
+<button formaction="http://example.com/process">
+      Process data
+</button>
+```
+
+- [ ] D
+
+```HTML
+<button method="http://example.com/process">
+      Process data
+</button>
+```
+
+#### Q89. Which is the best markup to produce this text?
+
+x<y&z>w
+
+- [ ] `<p>x<y&z>w</p>`
+
+- [ ] `<p>x\<y&z\>w</p>`
+
+- [ ] `<p>x<<y&&z>>w`
+
+- [ ] `<p>x<y&z>w</p>`
+
+`It's too strange question because all of that methods doesn't work. The good method is &amp, &lt, &gt using.`
+
+#### Q90. What is wrong with this code snippet?
+
+```HTML
+<label>Address:</label>
+<input type="text" name="address" id="address-input" />
+```
+
+- [ ] The `<label>` and `<input>` should be nested inside of a `<fieldset>` element.
+
+- [ ] **"address"** is not a valid value for the attribute **name** on an `<input>` element.
+
+- [ ] The `<label>` element is missing an **id** set to "address-input".
+
+- [x] The `<label>` element is missing a **for** attribute set to "address-input".
+
+#### Q91. What is the default method for form submission?
+
+- [x] GET
+- [ ] POST
+- [ ] PUT
+- [ ] SUBMIT
+
+#### Q92. Which is the most semantically correct markup for a side comment in small print?
+
+- [x] `<p>` Get 10% discount `<small>`not valid in France`</small></p>`
+- [ ] `<p>` Get 10% discount `<!--not valid in France--> </p>`
+- [ ] `<p>` Get 10% discount `<comment>`not valid in France`</comment></p>`
+- [ ] `<p>` Get 10% discount `<aside>`not valid in France`</aside></p>`
+
+#### Q93. Which choice will produce the spanish word <i>canción</i>?
+
+- [ ] `<p lang="es">canción</p>`
+- [x] `<p lang="es">canci&oacuten</p>`
+- [ ] `<p lang="es">cancio'n</p>`
+- [ ] `<p lang="es">canci'on</p>`
+
+#### Q94. What is the purpose of `<caption>`?
+
+- [ ] `<caption>` provides captions for `<audio>`,`<video>`,`<img>`, and `<table>`.
+- [x] `<caption>` provides captions to `<table>`.
+- [ ] `<caption>` provides captions for `<audio>`, `<video>`, and `<table>`.
+- [ ] `<caption>` provides captions for `<img>`, `<audio>`, and `<video>`.
+
+#### Q95. The value attribute is associated with which set of tags ?
+
+- [x] A
+
+```HTML
+<li>
+<input>
+<option>
+```
+
+- [ ] B
+
+```HTML
+<input>
+<option>
+<textarea>
+```
+
+- [ ] C
+
+```HTML
+<button>
+<input>
+<form>
+```
+
+- [ ] D
+
+```HTML
+<input>
+<label>
+<meter>
+```
+
+#### Q96. What is wrong with this code?
+
+`<img src="https://source.unsplash.com/random">`
+
+- [ ] `<img>` should be paired with a `<caption>` tag.
+- [x] The `<img>` element is missing an alt attribute.
+- [ ] `<img>` is not a valid HTML element. Instead, use `<image src="..."/>`.
+- [ ] `<img>` should be nested within a `<figure>` tag.

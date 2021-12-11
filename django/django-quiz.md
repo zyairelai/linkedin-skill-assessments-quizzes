@@ -23,10 +23,26 @@
 
 #### Q4. A client wants their site to be able to load "Rick & Morty" episodes by number or by title—e.g., shows/3/3 or shows/picklerick. Which URL pattern do you recommend?
 
-- [ ] url(r'shows/<int:season>/<int:episode>/', views.episode_number)
-- [x] path('shows/<int:season>/<int:episode>/', views.episode_number),
-- [ ] path('shows/<int:season>/<int:episode>', views.episode_number),
-- [ ] url(r'^show/(?P<season>[0-9]+)/(?P<episode>[0-9]+)/$', views.episode_number),
+- [ ] 
+```
+url(r'shows/<int:season>/<int:episode>/', views.episode_number),
+url(r'shows/<slug:episode_name>/', views.episode_name)
+```
+- [x] 
+```
+path('shows/<int:season>/<int:episode>/', views.episode_number),
+path(r'shows/<slug:episode_name>/', views.episode_name)
+```
+- [ ] 
+```
+path('shows/<int:season>/<int:episode>', views.episode_number),
+path(r'shows/<slug:episode_name>/', views.episode_number)
+```
+- [ ] 
+```
+url(r'^show/(?P<season>[0-9]+)/(?P<episode>[0-9]+)/$', views.episode_number),
+url(r'^show/(?P<episode_name>[\w-]+)/', views.episode_name
+```
 
 #### Q5. How do you determine at startup time if a piece of middleware should be used?
 
@@ -449,12 +465,12 @@ model=Planet
 - [ ] programmers
 - [ ] clients
 
-#### Q49. Which is not the part of Django Design Philosophies?
+#### Q49. Which is not part of Django's design philosophy?
 
 - [ ] Loose Coupling
 - [ ] Less Code
 - [ ] Fast Development
-- [x] Repeat Yourself
+- [x] Implicit over explicit
 
 #### Q50. What is the result of this template code?
 
@@ -479,3 +495,115 @@ model=Planet
 - [x] It depends on how many results return by query.
 - [ ] It depends on cache.
 - [ ] line 2
+
+#### Q52. You are building a web application using a React front end and a Django back end. For what will you need to provision?\*\*
+
+- [ ] an NGINX web server
+- [ ] a NoSQL database
+- [ ] a larger hard drive
+- [ ] CORS middleware
+
+#### Q53. To expose an existing model via an API endpoint, what do you need to implement?\*\*
+
+- [ ] an HTTP request
+- [ ] a JSON object
+- [ ] a query
+- [x] a serializer
+
+#### Q54. How would you stop Django from performing database table creation or deletion operations via migrations for a particular model?\*\*
+
+- [ ] Run the `migrate` command with `--exclude=[model_name]`.
+- [ ] Move the model definition from `models.py` into its own file.
+- [x] Set `managed=False` inside the model.
+- [ ] Don't run the `migrate` command.
+
+#### Q55. what method can you use to check if form data has changed when using a form instance?
+
+- [x] has_changed()
+- [ ] its_changed()
+- [ ] has_updated()
+- [ ] None of This
+
+#### Q56. What is WSGI?
+
+- [x] a server
+- [ ] an interface specification
+- [ ] a Python module
+- [ ] a framework
+
+#### Q57. Which generic view should be used for displaying the tittles of all Django Reinhardt's songs?
+
+- [ ] DetailView
+- [ ] TittleView
+- [ ] SongView
+- [x] ListView
+
+#### Q58. Which statement is most acurate, regarding using the default SQLite database on your local/development machine but Postgres in production
+
+- [x] There's less chance of introducing bugs since SQLite already works out the box
+- [ ] It's fine, you just need to keep both instances synchronized
+- [ ] It's a bad idea and could lead to issues down the road
+- [ ] It's the most efficient way to build a project
+
+#### Q59. Why might you want to write a custom model Manager?
+
+- [ ] to perform database queries
+- [ ] to set up a database for testing
+- [x] to modify the initial QuerySet that the Manager returns
+- [ ] to filter the results that a database query returns
+
+#### Q60. In Django, what are used to customize the data that is sent to the templates?
+
+- [ ] models
+- [ ] views
+- [ ] forms
+- [ ] serializers
+
+#### Q61. To complete the conditional, what should this block of code end with?
+
+```shell
+% if sparles >= 50 %
+  Lots of sparkles!
+% elif sparkles == 42 %
+  The answer to life, the universe, and everything!
+```
+
+- [x] `% endif %`
+- [ ] Nothing else is needed.
+- [ ] `% end%`
+- [ ] `% else %`
+
+#### Q62. You have inherited a Django project and need to get it running locally. It comes with a requirements.txt file containing all its dependencies. Which command should you use?
+
+- [ ] python install -r requirements.txt
+- [ ] django-admin startproject requirements.txt
+- [ ] pip install Django
+- [x] pip install -r requirements.txt
+
+#### Q63. When should you employ the POST method over the GET method for submitting data from a form?
+
+- [x] when the data in the form may be sensitive
+- [ ] when you want the data to be cached
+- [ ] when you want to use your browser to help with debugging
+- [ ] when efficiency is important
+
+#### Q64. What is a callable that takes a value and raises an error if the value fails to meet some criteria?
+
+- [ ] mediator
+- [x] validator
+- [ ] regular expression
+- [ ] deodorizer
+
+#### Q65. You are uploading a file to Django from a form and you want to save the received file as a field on a model object. You can simply assign the file object from**\_to a field of type\_\_**in the model.
+
+- [ ] request.META; FileField
+- [ ] request.FILES; BLOBField
+- [x] request.FILES; FileField
+- [ ] request.META.Files; CLOBField
+
+#### Q66. What python module might be used to store the current state of a Django model in a file?
+
+- [x] pickle
+- [ ] struct
+- [ ] marshal
+- [ ] serialize

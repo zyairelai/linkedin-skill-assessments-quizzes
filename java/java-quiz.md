@@ -241,7 +241,8 @@ class Main {
 - [ ] It will not compile because of line 2.
 - [ ] "World!"
 
-**Explanation:** Non-static method message() cannot be referenced from a static context.
+**Explanation:** Compilation error at line 10 because of final methods cannot be overridden, and here message() is a final method,
+and also note that Non-static method message() cannot be referenced from a static context.
 
 #### Q13. Given this code, which command will output "2"?
 
@@ -391,6 +392,8 @@ public class Jedi {
 - [ ] new Jedi(name, species, false)
 - [x] this(name, species, false)
 - [ ] super(name, species, false)
+
+  **Note:** This code won't compile, possibly broken code sample.
 
 #### Q27. Which statement is **NOT** true?
 
@@ -785,7 +788,7 @@ public TheClass() {
 }
 ```
 
-**Explanation:** `final` class members are allowed to be assigned only in two places: declaration and constructor
+**Explanation:** `final` class members are allowed to be assigned only in three places: declaration, constructor or an instance-initializer block.
 
 #### Q52. How many times f will be printed?
 
@@ -1034,7 +1037,7 @@ groucyButton.addActionListener(new ActionListener() {
 - [ ] Set object to null and call Runtime.getRuntime().runFinalization()
 - [ ] There is no way to force an object to be garbage collected
 
-[Reference](https://www.baeldung.com/java-hashcode)
+[Reference](https://sematext.com/blog/java-garbage-collection/)
 
 #### Q72. Java programmers commonly use design patterns. Some examples are the **\_**, which helps create instances of a class, the **\_**, which ensures that only one instance of a class can be created; and the **\_**, which allows for a group of algorithms to be interchangeable.
 
@@ -1101,10 +1104,12 @@ public class Duck {
 
 #### Q79. Which operator is used to concatenate Strings in Java
 
-- [x] -
-- [ ] &
-- [ ] .
-- [ ] -
+- [x] `+`
+- [ ] `&`
+- [ ] `.`
+- [ ] `-`
+
+- [Reference](https://www.techiedelight.com/concatenate-two-strings-java/)
 
 #### Q80. How many times does this loop print "exterminate"?
 
@@ -1235,24 +1240,6 @@ class Main {
 - [ ] "hello"
 - [ ] ????
 
-### 90. What code would you use in Constructor A to call Constructor B?
-
-```java
-public class Jedi {
-  /* Constructor A */
-  Jedi(String name, String species){}
-
-  /* Constructor B */
-  Jedi(String name, String species, boolean followsTheDarkSide){}
-  }
-```
-
-- [ ] Jedi(name, species, false)
-- [ ] new Jedi(name, species, false)
-- [x] this(name, species, false)
-- [ ] # super(name, species, false)
-  **Note:** This code won't compile, possibly broken code sample
-
 #### Q90. How would you use the TaxCalculator to determine the amount of tax on $50?
 
 ```java
@@ -1273,39 +1260,105 @@ class TaxCalculator {
 - [Reference](https://www.geeksforgeeks.org/static-methods-vs-instance-methods-java/)
 - [Code sample](https://replit.com/@mattheweller/EverlastingShadyBraces#TaxCalculator.java)
 
-#### Q91. What is the value of myCharacter after line 3 is run?
+#### Q91. <DUPLICATE of Q81>
+
+#### Q92. <DUPLICATE of Q37>
+
+#### Q93. What is the output of this code?
 
 ```java
-1: public class Main {
-2:   public static void main (String[] args) {
-3:     char myCharacter = "piper".chatAt(3);
-4:   }
-5: }
-```
-
-- [ ] p
-- [ ] i
-- [ ] r
-- [x] e
-
-#### Q92. What is the output of this code?
-
-```java
-class Main {
-    static int count = 0;
+ public class Main {
     public static void main(String[] args) {
-      if(count < 3){
-          count++;
-          main(null);
-      }else{
-          return;
-      }
-      System.out.println("Hello World!");
+      HashMap<String, Integer> pantry = new HashMap<>();
+
+      pantry.put("Apples", 3);
+      pantry.put("Oranges", 2);
+
+      int currentApples = pantry.get("Apples");
+      pantry.put("Apples", currentApples + 4);
+
+      System.out.println(pantry.get("Apples"));
     }
 }
 ```
 
-- [ ] it will run forever.
-- [x] it will print "Hello World!" three times.
-- [ ] it will not compile.
-- [ ] it will throw a runtime exception.
+- [ ] 3
+- [ ] 4
+- [ ] 6
+- [x] 7
+
+#### Q94. Which characteristic does not apply to instances of java.util.HashSet=
+
+- [ ] uses hashcode of objects when inserted
+- [x] contains unordred elements
+- [ ] contains unique elements
+- [ ] contains sorted elements
+
+#### Q95. What is the output?
+
+```java
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args)
+	{
+		PriorityQueue<Integer> queue = new PriorityQueue<>();
+		queue.add(4);
+		queue.add(3);
+		queue.add(2);
+		queue.add(1);
+
+		while (queue.isEmpty() == false) {
+			System.out.printf("%d", queue.remove());
+		}
+	}
+}
+```
+
+- [ ] 1 3 2 4
+- [ ] 4 2 3 1
+- [x] 1 2 3 4
+- [ ] 4 3 2 1
+
+#### Q96. What will this code print, assuming it is inside the main method of a class?
+
+`System.out.println("hello my friends".split(" ")[0]);`
+
+- [ ] my
+- [ ] hellomyfriends
+- [x] hello
+- [ ] friends
+
+#### Q97. You have an instance of type Map<String, Integer> named instruments containing the following key-value pairs: guitar=1200, cello=3000, and drum=2000. If you add the new key-value pair cello=4500 to the Map using the put method, how many elements do you have in the Map when you call instruments.size()?
+
+`System.out.println("hello my friends".split(" ")[0]);`
+
+- [ ] 2
+- [ ] When calling the put method, Java will throw an exception
+- [ ] 4
+- [x] 3
+
+#### Q98. Which class acts as root class for Java Exception hierarchy?
+
+- [ ] Clonable
+- [x] Throwable
+- [ ] Object
+- [ ] Serializable
+
+#### Q99. <DUPLICATE of Q15>
+
+#### Q100. Which class does not implement the java.util.Collection interface?
+
+- [ ] java.util.Vector
+- [ ] java.util.ArrayList
+- [ ] java.util.HashSet
+- [x] java.util.HashMap
+
+**Explanation**: HashMap class implements Map interface.
+
+#### Q101. You have a variable of named `employees` of type `List<Employee>` containing multiple entries. The `Employee` type has a method `getName()` that returns te employee name. Which statement properly extracts a list of employee names?
+
+- [ ] `employees.collect(employee -> employee.getName());`
+- [ ] `employees.filter(Employee::getName).collect(Collectors.toUnmodifiableList());`
+- [x] `employees.stream().map(Employee::getName).collect(Collectors.toList());`
+- [ ] `employees.stream().collect((e) -> e.getName());`

@@ -37,7 +37,7 @@
 
 #### Q6. How can you create a stored procedure in MySQL?
 
-- [ ]
+- [ ] A
 
 ```
 1 CREATE PROCEDURE P () AS
@@ -45,7 +45,7 @@
 3 END;
 ```
 
-- [x]
+- [x] B
 
 ```
 1 CREATE PROCEDURE P ()
@@ -53,7 +53,7 @@
 3 END
 ```
 
-- [ ]
+- [ ] C
 
 ```
 1 CREATE PROCP
@@ -61,7 +61,7 @@
 3 END;
 ```
 
-- [ ]
+- [ ] D
 
 ```
 1 CREATE PROC P AS O
@@ -78,7 +78,7 @@
 
 #### Q8. Management has requested that you build an employee database. You start with the employee table. What is the correct syntax?
 
-- [ ]
+- [ ] A
 
 ```
     1 CREATE TABLE employee (
@@ -91,7 +91,7 @@
     8 );
 ```
 
-- [ ]
+- [ ] B
 
 ```
     1 CREATE TABLE employee (
@@ -104,7 +104,7 @@
     8 );
 ```
 
-- [ ]
+- [ ] C
 
 ```
     1 CREATE TABLE IF EXISTS employee (
@@ -117,7 +117,7 @@
     8 );
 ```
 
-- [x]
+- [x] D
 
 ```sql
     1 CREATE TABLE IF NOT EXISTS employee (
@@ -182,7 +182,8 @@
 - [ ] encrypted algorithms
 - [ ] user settings
 - [x] access control lists
-      [reference](https://dev.mysql.com/doc/refman/8.0/en/security-guidelines.html)
+
+[Reference](https://dev.mysql.com/doc/refman/8.0/en/security-guidelines.html)
 
 #### Q16. Which MySQL command modifies data records in a table?
 
@@ -407,6 +408,8 @@
 - [ ] insert into
 - [x] show create table
 
+Note that the question is about _getting_ the data and not about the _duplicating_ operation itself. And actually there is no need to run `SHOW CREATE TABLE` at all. [To duplicate the table](https://popsql.com/learn-sql/mysql/how-to-duplicate-a-table-in-mysql) structure you can `CREATE TABLE new_table LIKE original_table;`.
+
 #### Q46. you need to make your mysql system secure against attackers. What are you _not_ supposed to do?
 
 - [ ] Run MySQL server as a normal user.
@@ -416,17 +419,19 @@
 
 #### Q47. You manage a database with a table "customers". You created a temporary table also called "customers" with which you are working for the duration of your session. You need to recreate the temporary table with different specs. Which command do you need to run first?
 
-- [ ] create temporary table customers;
-- [ ] drop temp table customers;
-- [ ] drop table customers;
-- [x] drop temporary table customers;
+- [ ] `create temporary table customers;`
+- [ ] `drop temp table customers;`
+- [ ] `drop table customers;`
+- [x] `drop temporary table customers;`
 
 #### Q48. You need to run a complex query with recursive subqueries, but without creating a stored procedure or a function. Which command or clause do you use?
 
 - [ ] COLLATE
-- [x] UNION
+- [ ] UNION
 - [ ] FULL JOIN
-- [ ] WITH
+- [x] WITH
+
+This is exactly what [WITH clause](https://dev.mysql.com/doc/refman/8.0/en/with.html) is designed for
 
 #### Q49. Which choice is not a processing algorithm for database views?
 
@@ -442,15 +447,17 @@
 - [ ] to display default settings that are in error
 - [x] to display storage error codes
 
-`*note: perror prints a description for a system error code or for a storage engine (table handler) error code.`
+Note: perror prints a description for a system error code or for a storage engine (table handler) error code -
 [link](<https://dev.mysql.com/doc/refman/5.7/en/perror.html#:~:text=2%20perror%20%E2%80%94%20Display%20MySQL%20Error%20Message%20Information,-For%20most%20system&text=You%20can%20find%20out%20what,(table%20handler)%20error%20code>)
 
 #### Q51. How can you list all columns for a given table?
 
 - [ ] SHOW table COLUMNS;
-- [x] SHOW COLUMNS FROM table; (\*not on test but `DESCRIBE tablename` is a shortcut for this command)
+- [x] SHOW COLUMNS FROM table;
 - [ ] LIST table COLUMNS;
 - [ ] SELECT COLUMNS FROM table;
+
+Note: `DESCRIBE tablename` is a shortcut for this command
 
 #### Q52. How would you list the full set of tables in the currently selected database?
 
@@ -494,15 +501,17 @@
 - [ ] to make the system faster
 - [ ] to prevent data anomalies
 
+Note: "to make the system faster" can also be correct. For example we can calculate some heavy query in advance and store its result in some column (use it as a cache). So if "system" means "application which uses mysql" then it's correct too.
+
 #### Q58. The code snippet below is used to read data from an XML file into a table. Which XML structure is _not_ supported by the statement?
 
-```
-1 LOAD XML LOCAL INFILE 'cars.xml'
-2 INTO TABLE cars
-3 ROWS IDENTIFIED BY `<car>`;
+```mysql
+LOAD XML LOCAL INFILE 'cars.xml'
+INTO TABLE cars
+ROWS IDENTIFIED BY `<car>`;
 ```
 
-- [ ]
+- [ ] A
 
 ```xml
 <car>
@@ -512,7 +521,7 @@
 </car>
 ```
 
-- [x]
+- [x] B
 
 ```xml
 <car name="make"> Dodge </car>
@@ -520,16 +529,16 @@
 <car name="year"> 2000 </car>
 ```
 
-- [ ]
+- [ ] C
 
 ```xml
-<car make="Ford" model="Mustang" year="2002/>
+<car make="Ford" model="Mustang" year="2002"/>
 ```
 
-- [ ]
+- [ ] D
 
 ```xml
-<car year="2010>
+<car year="2010">
     <make>Mercedes</make> <model> C-Class</model>
 </car>
 ```
@@ -546,7 +555,9 @@
 - [ ] It will stop and issue an error when it encounters a row that is referenced by a row in a child table.
 - [x] It always first drops, then re-creates a new table.
 - [ ] It deletes rows one by one on tables with foreign key constraints.
-- [ ] It does not invoke the `DELETE` triggers associated with the table.
+- [x] It does not invoke the `DELETE` triggers associated with the table.
+
+Note: both answers are correct - see [TRUNCATE TABLE Statement](https://dev.mysql.com/doc/refman/8.0/en/truncate-table.html) in MySQL manual
 
 #### Q61. You are working with the tables as shown in this diagram. You need to get the number of cars sold per the home state of each customer's residence. How can you accomplish this?
 
@@ -556,6 +567,8 @@
 - [ ] `SELECT state, COUNT(*) FROM customers c LEFT JOIN purchases p ON c.ID = p.customerID GROUP BY state;`
 - [x] `SELECT state, COUNT(*) FROM customers c, purchases p WHERE c.ID = p.customerID GROUP BY state;`
 - [ ] `SELECT state, COUNT(*) FROM customers GROUP BY state;`
+
+Explanation: THe difference between 2 and 3 is that LEFT JOIN will return 1 row per customer before grouping. If replaced with RIGHT JOIN it would return the correct info.
 
 #### Q62. In data migration, there is often a need to delete duplicate rows as part of data cleanup. Which statement works best?
 
@@ -580,17 +593,19 @@
 
 #### Q65. You need to restore a MySQL database from a backup file. Which command-line tool do you use for the actual data import, after re-creating the database?
 
-- [ ] mysqld
-- [x] mysql
-- [ ] mysqladmin
-- [ ] mysqldump
+- [ ] `mysqld`
+- [x] `mysql`
+- [ ] `mysqladmin`
+- [ ] `mysqldump`
 
 #### Q66. You are importing data as JSON into a new table. You run CREATE TABLE json_data ( city JSON ); and insert rows into this table. What is the correct syntax to see the list of cities?
 
-- [ ] SELECT city FROM json_data;
-- [x] SELECT city->>'\$.name' city FROM json_data;
-- [ ] SELECT city.name city FROM json_data;
-- [ ] SELECT city->'\$.name' city FROM json_data; <= this is valid too but the results will be enclosed with quotation marks
+- [ ] `SELECT city FROM json_data;`
+- [x] `SELECT city->>'$.name' city FROM json_data;`
+- [ ] `SELECT city.name city FROM json_data;`
+- [ ] `SELECT city->'$.name' city FROM json_data;`
+
+Note: the last option is valid too but the results will be enclosed with quotation marks
 
 #### Q67. If you want to use MyISAM instead of InnoDB, which option do you need to specify in the CREATE TABLE statement?
 
@@ -610,33 +625,33 @@ Table name: customers
 | A004 | Johnson | Jack | 312-312-3120 | 1111 Chicago Avenue | Chicago | IL | 60606 |
 | A005 | Lopez | Linda | 737-777-3333 | 123 Main Street | Austin | TX | 73344 |
 
-- [ ]
+- [ ] A
 
-```
+```sql
 SELECT *
 FROM customers
 WHERE address MATCH 'Street' OR 'Drive';
 ```
 
-- [ ]
+- [ ] B
 
-```
+```sql
 SELECT *
 FROM customers
 WHERE MATCH(address) IN ('street, drive');
 ```
 
-- [ ]
+- [ ] C
 
-```
+```sql
 SELECT *
 FROM customers
 WHERE address MATCH 'Street' OR address MATCH 'Drive';
 ```
 
-- [x]
+- [x] D
 
-```
+```sql
 SELECT *
 FROM customers
 WHERE MATCH(address) AGAINST ('street, drive');
@@ -672,10 +687,10 @@ WHERE MATCH(address) AGAINST ('street, drive');
 
 #### Q73. Which is a valid constructor for a class named User?
 
-- [ ] public construct User() {}
-- [x] public User() {}
-- [ ] public instance User() {}
-- [ ] public init User() {}
+- [ ] `public construct User() {}`
+- [x] `public User() {}`
+- [ ] `public instance User() {}`
+- [ ] `public init User() {}`
 
 #### Q74. What is the maximum number of columns that can be used by a single table index?
 
@@ -686,10 +701,10 @@ WHERE MATCH(address) AGAINST ('street, drive');
 
 #### Q75. Which command will return a list of triggers in the current database?
 
-- [ ] DISPLAY TRIGGERS;
-- [x] SHOW TRIGGERS;
-- [ ] SELECT ALL TRIGGERS;
-- [ ] SELECT \* FROM information_schema.triggers;
+- [ ] `DISPLAY TRIGGERS;`
+- [x] `SHOW TRIGGERS;`
+- [ ] `SELECT ALL TRIGGERS;`
+- [ ] `SELECT * FROM information_schema.triggers;`
 
 #### Q76. Which statement is true about TIMESTAMP and DATETIME data types?
 
@@ -700,71 +715,24 @@ WHERE MATCH(address) AGAINST ('street, drive');
 
 #### Q77. What is the equivalent of the mysqladmin reload command?
 
-- [ ] mysqladmin flush-threads
-- [ ] mysqladmin flush-tables
-- [x] mysqladmin flush-privileges
-- [ ] mysqladmin flush-all
+- [ ] `mysqladmin flush-threads`
+- [ ] `mysqladmin flush-tables`
+- [x] `mysqladmin flush-privileges`
+- [ ] `mysqladmin flush-all`
 
-#### Q78. Explain the security aspectof stored procedures
+#### Q78. Explain the security aspect of stored procedures
 
 - [ ] Stored procedures are not secure, because they can be executed from the command line as the root user
 - [ ] Stored procedures are secure, because the owner of the stored procedure can decide to whom access is granted
-- [ ] Stored procedures are secure, because applications can be given access to stored procedures and not any underlying variables
+- [x] Stored procedures are secure, because applications can be given access to stored procedures and not any underlying variables
 - [ ] Stored procedures are not secure, because they can execute statements to drop tables or bulk delete data
 
-#### Q79. Management has requested that you build an employee database. You start with the employee table. What is the correct syntax?
+#### Q79. How would you retrieve data on all the customers where no phone number is stored?
 
-- [ ]
-
-```sql
-1 CREATE TABLE employee (
-2   employeeID char(10),
-3   firstName varchar(50),
-4   lastName varchar(50),
-5   phone varchar(20),
-6   address varchar(50),
-7   PRIMARY KEY employeeID
-8 );
-```
-
-- [ ]
-
-```sql
-1 CREATE TABLE IF NOT EXISTS employee (
-2   employeeID char(10),
-3   firstName varchar(50),
-4   lastName varchar(50),
-5   phone varchar(20),
-6   address varchar(50),
-7   PRIMARY KEY (employeeID)
-8 );
-```
-
-- [x]
-
-```sql
-1 CREATE TABLE employee (
-2   employeeID char(10),
-3   firstName varchar(50),
-4   lastName varchar(50),
-5   phone varchar(20),
-6   address varchar(50),
-7   PRIMARY KEY ON employeeID
-8 );
-```
-
-- [ ]
-
-```sql
-1 CREATE TABLE IF EXISTS employee (
-2   employeeID char(10),
-3   firstName varchar(50),
-4   lastName varchar(50),
-5   phone varchar(20),
-6   address varchar(50),
-7   PRIMARY KEY (employeeID)
-’8 );
-```
+- [ ] `SELECT * FROM customers WHERE PhoneNumber = NULL;`
+- [ ] `SELECT * FROM customers WHERE PhoneNumber IS NOT VALID;`
+- [x] `SELECT * FROM customers WHERE PhoneNumber IS NULL;`
+- [ ] `SELECT * FROM customers WHERE PhoneNumber IS UNKNOWN;`
 
 #### Q80. In the diagram below, the price field is declared as type DECIMAL. What would be a more efficient declaration for this field?
 
@@ -775,12 +743,14 @@ WHERE MATCH(address) AGAINST ('street, drive');
 - [ ] NUMERIC
 - [ ] DOUBLE
 
-#### Q81. Which choice is _not_ an available string type for a column?
+#### Q81. Which choice is `not` an available string type for a column?
 
-- [ ] ENUM
-- [ ] SET
-- [x] BIT
-- [ ] CHAR
+- [ ] `ENUM`
+- [ ] `SET`
+- [x] `BIT`
+- [ ] `CHAR`
+
+Explnation: BIT is not a string type
 
 #### Q82. This diagram shows what type of relationship between customers and cars?
 
@@ -788,5 +758,84 @@ WHERE MATCH(address) AGAINST ('street, drive');
 
 - [ ] one-to-many
 - [ ] parent-child
-- [ ] many-to-many
+- [x] many-to-many
 - [ ] many-to-one
+
+#### Q83. A stored routine is a set of SQL statements stored on the server and takes form as either a procedure or a function. Which statement cannot be used inside stored routines?
+
+- [ ] `SELECT`
+- [x] `USE`
+- [ ] `SET`
+- [ ] `DECLARE`
+
+Explanation: Both `SET` and `DECLARE` are used to create variables. Reference: [MySQL STORED PROCEDURE Tutorial With Examples](https://www.softwaretestinghelp.com/mysql-stored-procedure/)
+
+#### Q84. When a new student is added to a new database, you want new records to be created in the related tables such as Exam, Score and Attendance. How would you accomplish this?
+
+- [x] trigger
+- [ ] regular expression
+- [ ] view
+- [ ] index
+
+#### Q85. In the diagram below, the ID fields are declared as type CHAR instead of INT . Which is NOT one of the possible reasons behind that decision?
+
+![mysql picture](images/mysql_q85.png)
+
+- [ ] The ID field needs to include letters and not just numbers.
+- [ ] You can have a consistent format across all of the tables that require ID fields.
+- [ ] The ID field needs to have leading 0s, which the INT data type would truncate.
+- [x] The `CHAR(10)` data type is more efficient and space-saving.
+
+#### Q86. Why would you use a common table expression (CTE)?
+
+- [ ] To define queries for later reuse for the duration of the current session
+- [ ] To create temporary tables that can be used to pre-select often-used result sets.
+- [ ] To calculate a new single value from a result set and return it to the query parser.
+- [x] To break down complex queries and allow reuse within a query.
+
+Explanation: CTEs do not create temporary tables, they only work within a signle query. Reference: [13.2.15 WITH (Common Table Expressions)](https://dev.mysql.com/doc/refman/8.0/en/with.html).
+
+#### Q87. Which option modifier tells a program not to exit with an error if it does not recognize the option, but instead to issue a warning?
+
+- [ ] --verbose
+- [ ] --skip
+- [ ] --skip-error
+- [x] --loose
+
+Reference: [4.2.2.4 Program Option Modifiers](https://dev.mysql.com/doc/refman/8.0/en/option-modifiers.html)
+
+#### Q88. REMOVED (Duplicate of Q43)
+
+#### Q89. What does this SQL statement return?
+
+```
+SELECT name FROM students WHERE name REGEXP '^to';
+```
+
+- [x] all names starting with "to," such as Tommy or Tony
+- [ ] all names with "to," such as Roberto and Tommy
+- [ ] all names without "to," such as Samantha or Kathryn
+- [ ] all names ending with "to," such as Roberto
+
+#### Q90. You are working with the tables as shown in the diagram. You need to generate the list of price totals for each make and model of car, with subtotals for each make, and the grand total of all prices. Which SQL clause do you use?
+
+![mysql picture](images/mysql_q92.png)
+
+- [ ] UNION
+- [ ] SHOW TOTALS
+- [ ] UNION ALL
+- [x] WITH ROLLUP
+
+#### Q91. The left and right joins are also known as \_.
+
+- [ ] Inner Join
+- [ ] Natural Join
+- [x] Outer Join
+- [ ] Cartesian Join
+
+#### Q92. What is the valid way to create a database view in MySQL?
+
+- [ ] `CREATE VIEW v1 SELECT * FROM t1 WHERE col1 > 10;`
+- [ ] `CREATE VIEW v1 AS BEGIN SELECT * FROM t1 END;`
+- [ ] `CREATE VIEW v1 BEGIN SELECT * FROM t1 END;`
+- [x] `CREATE VIEW v1 AS SELECT * FROM t1;`

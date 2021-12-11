@@ -230,7 +230,7 @@ Note: Free trial doesn't have the organizations.
 
 - [ ] group
 - [ ] folder
-- [ ] project
+- [x] project
 - [ ] organization
 
 #### Q35. What is needed to access GCP APIs in your project?
@@ -335,6 +335,42 @@ Note: Free trial doesn't have the organizations.
 #### Q45. You need to optimize spending for always-on Compute Engine virtual machines of certain sizes and types-with minimum effort. What do you do?
 
 - [ ] Analyze machine usage to verify that machines will be on for more that 25% of the time, and verify that contained use discounts have been automatically applied to your bill.
-- [ ] Analyze machine usage to verify that machines will be on for more that 25% of the time, and verify that sustained use discounts have been automatically applied to your bill.
+- [x] Analyze machine usage to verify that machines will be on for more that 25% of the time, and verify that sustained use discounts have been automatically applied to your bill.
 - [ ] Analyze machine usage to verify that machines will be on for more than 25% of the time and purchase contained use discounts.
 - [ ] Analyze machine usage to verify that machines will be on for more than 25% of the time and purchase sustained use discounts.
+
+[Reference](https://cloud.google.com/compute/docs/sustained-use-discounts)
+
+#### Q46. You are designing a GCP replacement for your on-premises data warehouse. Which service do you select?
+
+- [ ] Cloud SQL
+- [ ] Bigtable
+- [ ] Cloud Spanner
+- [x] BigQuery
+
+[Source: LinkedIn Assessment Practice mode](https://i.imgur.com/mOCQVug.png)
+
+#### Q47. How can you quickly back up a persistent disk on Compute Engine?
+
+- [x] Take a snapshot
+- [ ] Create an instance group
+- [ ] Create an instance template
+- [ ] Create an image
+
+[Source: LinkedIn Assessment Practice mode](https://i.imgur.com/9rNe5MV.png)
+
+#### Q48. You are implementing IAM roles for your organization following GCP best practice. Which statement best reflects this?
+
+- [ ] At minimum, you should have two levels of access: one for admins, one for users.
+- [ ] At minimum, you should have three levels of access: one for networking, one for security, one for developers.
+- [ ] At minimum, you should have three levels of access: one for admins, one for security, one for users.
+- [ ] At minimum, you should have two levels of access: one for networking, one for developers.
+
+#### Q49. You need to quickly build an application that logs all file uploads to a Cloud Storage bucket. Which service do you select?
+
+- [x] Cloud Functions
+- [ ] Cloud Run
+- [ ] Google Kubernetes Engine
+- [ ] Google Compute Engine
+
+[Reference](https://cloud.google.com/functions#all-features)

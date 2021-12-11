@@ -2,10 +2,12 @@
 
 #### Q1. How filters are used in Spring Web?
 
-- [ ] Filters are called before a request hits the DispatcherServlet.They allow for interception-style, chained processing of web requests for security, timeouts, and other purposes.
+- [x] Filters are called before a request hits the DispatcherServlet. They allow for interception-style, chained processing of web requests for security, timeouts, and other purposes.
 - [ ] Filters are used with a checksum algorithm that will filter invalid bytes out of a byte stream request body and allow for processing of HTTP requests from the DispatcherRequestServlet.
 - [ ] Filters are used with a checksum algorithm that will filter invalid bytes out of an octet stream a multipart upload and allow for chained processing of WebDispatcherServlet requests.
-- [x] Filters are used to validate request parameters out of the byte stream request body and allow for processing of requests from the DispatcherRequestServlet.
+- [ ] Filters are used to validate request parameters out of the byte stream request body and allow for processing of requests from the DispatcherRequestServlet.
+
+Reference: [HandlerInterceptors vs. Filters in Spring MVC](https://www.baeldung.com/spring-mvc-handlerinterceptor-vs-filter). Also there is no such thing as DispatcherRequestServlet in Spring.
 
 #### Q2. How is a resource defined in the context of a REST service?
 
@@ -70,12 +72,12 @@
 - [ ] 1. init-method 2. afterPropertiesSet() 3. @PostConstruct
 - [ ] You cannot use these methods together-you must choose only one.
 
-#### Q11. What is the function of the @Transactional annotation at the class level?
+#### Q11. What is the function of the `@Transactional` annotation at the class level?
 
-- [ ] It's a transaction attribute configured by spring.security.transactions.xml config file that uses Spring's transaction implementation and validation code.
-- [ ] It's a transaction must actively validate by the bytecode of a transaction using Spring's TransactionBytecodeValidator class. Default Transaction behavior rolls back on validation exception but commits on proper validation
+- [ ] It's a transaction attribute configured by `spring.security.transactions.xml` config file that uses Spring's transaction implementation and validation code.
+- [ ] It's a transaction that must actively validate by the bytecode of a transaction using Spring's `TransactionBytecodeValidator` class. Default Transaction behavior rolls back on validation exception but commits on proper validation
 - [x] It creates a proxy that implements the same interface(s) as the annotated class, allowing Spring to inject behaviors before, after, or around method calls into the object being proxied.
-- [ ] It's a transaction that must be actively validated by Spring's TransactionValidator class using Spring's transaction validation code. Default Transaction behavior rolls back on validation exception.
+- [ ] It's a transaction that must be actively validated by Spring's `TransactionValidator` class using Spring's transaction validation code. Default Transaction behavior rolls back on validation exception.
 
 #### Q12. Which is a valid example of the output from this code (ignoring logging statements) ?
 
@@ -264,6 +266,8 @@ public class SampleController {
 - [x] It's the servlet filter proxy delegating to a filter bean specified in web.xml. All calls to the filter proxy will be delegated to that servlet filter bean.
 - [ ] It's the web servlet daemon filter proxy that delegates to a bean specified in spring.security.factories. All calls to the filter proxy that do not contain a proper route will return an error.
 
+Reference: [Overview and Need for DelegatingFilterProxy in Spring](https://www.baeldung.com/spring-delegating-filter-proxy)
+
 #### Q31. What value does Spring Boot Actuator provide?
 
 - [x] It helps monitor and manage a Spring Boot application by providing endpoints such as health checks, auditing, metrics gathering, and HTTP tracing.
@@ -271,12 +275,16 @@ public class SampleController {
 - [ ] It's a CLI that allows you to modify the configuration of a running Spring Boot application without the need for restarting or downtime.
 - [ ] It provides out-of-the-box functionality that integrates wiltr?third-party metrics platforms to automatically scale up and down the number of instances of the Spring Boot application.
 
+Reference: [Spring Boot Actuator](https://www.baeldung.com/spring-boot-actuators)
+
 #### Q32. What is the purpose of the @ContextConfiguration annotation in a JUnit Test?
 
 - [ ] It introspects the local machine and automatically provisions resources based on certain contextual configuration files.
 - [ ] It automatically generates comments for annotated classes on autowired dependencies to provide additional context about dependencies.
 - [x] It defines metadata at the class-level to determine how to load or configure an ApplicationContext in Spring integration tests.
 - [ ] It automatically generates JavaDocs for annotated classes to provide additional context about the purpose of the class.
+
+Reference: [@ContextConfiguration Example in Spring Test](https://www.concretepage.com/spring-5/contextconfiguration-example-spring-test)
 
 #### Q33. How are authentication and authorization different?
 
@@ -320,7 +328,7 @@ public class SampleController {
 - [ ] an encoded message and response between various shards of a database
 - [ ] an exchange or interaction between various worker nodes in a multithreaded environment
 
-#### Q39. Modularization of a concern that cuts across multiple classes is known as a(n)\_.
+#### Q39. Modularization of a concern that cuts across multiple classes is known as a(n)`____`.
 
 - [ ] multiclass
 - [x] aspect
@@ -398,9 +406,288 @@ private String val;
 - [ ] root.logger.level
 - [x] logging.level.root
 
+Reference: [Logging in Spring Boot](https://www.baeldung.com/spring-boot-logging)
+
 #### Q46. What is a Spring bean uniquely identified?
 
 - [ ] an autogenerated UUID
 - [x] a unique String name
 - [ ] an auto-incremented Integer ID
 - [ ] an ID derived from its location in memory
+
+#### Q47. What is the difference between a JAR and a WAR distribution in Spring Boot?
+
+- [ ] Spring Boot can create a self-executable WAR file that runs without needing a servlet container. A JAR file has to be deployed to an existing web container such as Tomcat with separate files for dependencies.
+- [ ] Spring Boot can create a JAR file that contains bytecode that interacts directly with the OS without needing a servlet container. A WAR file has to be deployed to an existing web container such as Tomcat with separate files for dependencies.
+- [ ] The Spring Boot JAR file will be deployed to a Servlet container such as Tomcat on an existing running web server locally. The WAR file will be deployed to a cloud-based servlet container.
+- [x] Spring Boot can create a self-executable JAR file that contains all the dependencies and an embedded Servlet container. A WAR file has to be deployed to an existing web container such as Tomcat.
+
+#### Q48. How does the transaction propagation setting impact the behavior of transactions?
+
+- [ ] It ensures that transactions that are commited to the database are propagated to all the shards of a clustered database system.
+- [ ] None of these answers is correct.
+- [ ] It guarantees that transactions that are submitted to the database cluster are propagated to all the nodes of a clustered database cloud.
+- [x] It enforces that a logical transaction scope is created for each method that determines rollback-only status, with an outer transaction scope being logically independent from the inner transaction scope.
+
+#### Q49. What is printed when this code is run as a @SpringBootApplication?
+
+```java
+@Component
+public class Test implements InitializingBean {
+     @Autowired
+     ApplicationContext context;
+
+     private TestService service;
+     public void setService(TestService service) {
+          this.service = service;
+     }
+
+     @Override
+     public void afterPropertiesSet() throws Exception {
+          System.out.print(context.containsBean("testService") + " ");
+          System.out.println(service.getClass());
+     }
+}
+@Service
+class TestService {}
+```
+
+- [x] a null pointer stacktrace
+- [ ] true null
+- [ ] true package.TestService
+- [ ] false package.TestService
+
+Explanation: missing `@Autowired` on `private TestService service` or on the setter
+
+#### Q50. To register a custom filter that applies only to certain URL patterns, you should remove the **\_** annotation from the filter class and register a @Bean of type `_` in Spring @Configuration.
+
+- [ ] @RequestMapping; WebRequest
+- [ ] @Controller; URLFilter
+- [ ] @WebFilter; ServletContextInitializer
+- [x] @Component; FilterRegistrationBean
+
+#### Q51. What is the correct term for each definition bellow?
+
+1. A predicate that matches join points.
+2. A point during the execution of a program, such as the execution of a method or the handling of an exception.
+3. An action taken by an aspect at a particular join point.
+
+- [ ]
+  ```
+  1. Pointcut
+  2. Advice
+  3. Join point
+  ```
+- [ ]
+  ```
+  1. Join point
+  2. Pointcut
+  3. Advice
+  ```
+- [ ]
+  ```
+  1. Advice
+  2. Pointcut
+  3. Join point
+  ```
+- [x]
+  ```
+  1. Pointcut
+  2. Join point
+  3. Advice
+  ```
+
+#### Q52. How should passwords be stored?
+
+- [x] Passwords should be hashed using an adaptive one-way function such as bcrypt.
+- [ ] Passwords can be stored in a BASE64 encoded format if they are stored in a private database.
+- [ ] Passwords should be salted and hashed using the MD5 algorithm.
+- [ ] Passwords should be hashed using the SHA-1 algorithm, then salted to provide defence against rainbow table attacks.
+
+Explanation: sha-1 is not considered secure anymore: https://en.wikipedia.org/wiki/SHA-1#Attacks . With bcrypt you can select more complex hashes https://en.wikipedia.org/wiki/Bcrypt
+
+#### Q53. What methods does this Pointcut expression reference?
+
+`@target(com.linkedin.annotation.Loggable)`
+
+- [x] any join point where the target object has a @Loggable annotation
+- [ ] any join point where the executing method has a @Loggable annotation
+- [ ] any method that implements Loggable
+- [ ] any method that extends Loggable
+
+Reference: [Difference between @target and @within (Spring AOP)](https://stackoverflow.com/questions/51124771/difference-between-target-and-within-spring-aop)
+
+#### Q54. What is printed when this code is run as a @SpringBootApplication?
+
+```java
+@Component
+public class Test implements InitializingBean {
+     @Autowired
+     ApplicationContext context;
+
+     @Autowired
+     SimpleDateFormat formatter;
+
+     @Override
+     public void afterPropertiesSet() throws Exception {
+          System.out.println(context.containsBean("formatter"));
+          System.out.println(formatter.getClass());
+     }
+}
+@Configuration
+class TestConfig2 {
+    @Bean
+    public final SimpleDateFormat formatter() {
+        return new SimpleDateFormat();
+    }
+}
+```
+
+- [ ] true <br />
+      &emsp; class java.text.SimpleDateFormat <br />
+- [ ] true <br />
+      &emsp; SimpleDateFormat <br />
+- [ ] a NullPointerException stacktrace
+- [x] a BeanDefinitionParsingException stacktrace
+
+Explanation: `@Bean`-method in `@Configuration` must be overridable. Remove the `final` keyword to fix.
+
+#### Q55. What is the purpose of a web application context?
+
+- [ ] Configures a web application that is able to be deleted and re-created during runtime through hot swap. It adds a **recreateContext()** method and defines a root WebDaemon that must be bound to in the bootstrap process.
+- [ ] It configures a Spring application that is able to be modified on the fly during runtime through bytecode re-encoding. Also it adds an **updateContext()** method and defines a root WebServlet that must be bound to in the bootstrap process.
+- [x] It provides configuration for a web application that is read-only while running. Also, it adds a **getServletContext()** method and defines an attribute name to which the root context must be bound in the bootstrap process.
+- [ ] It provides configuration for a Spring application that is updatable on the fly during runtime through bytecode weaving. Also it adds an **updateServletContext()** method and defines a root servlet that must be bound to in the bootstrap process.
+
+#### Q56. What is Spring AOP?
+
+- [ ] Aspect-Oriented Programming allows you to define different cross-cutting aspects that isolate beans to be available only in certain environments and profiles.
+- [ ] Aspect-Oriented Programming enables you to perform profiling, which lets you develop different cross-cutting JVM performance-tuning profiles for different aspects of your applications.
+- [x] Aspect-Oriented Programming enables the modularization of cross-cutting concerns so that repeated boilerplate logic, such as logging code, does not pollute business logic.
+- [ ] Aspect-Oriented Programming enables you to persist cross-cutting data across modularized shards of your database.
+
+#### Q57. Assuming username and password authentication is in place, what method on the Authentication object can be used to obtain the username?
+
+- [x] getPrincipal
+- [ ] getUsername
+- [ ] getUser
+- [ ] getDn
+
+#### Q58. Assuming no additional configuration is provided, what is the first selection criteria Spring uses to choose a bean when autowiring a property?
+
+- [ ] none of these answers
+- [ ] bean type
+- [ ] bean size
+- [x] bean name
+
+### Q59. What is the result of calling the map controller method using the following HTTP request?
+
+```
+POST localhost:8080/map
+{"b" : "b", "d" : "d"}
+```
+
+```java
+@RestController
+public class SampleController {
+    @RequestMapping("/map")
+    public String map(@RequestBody SampleObject sampleObject) {
+        return sampleObject.getB() + sampleObject.getC();
+    }
+}
+```
+
+```java
+public class SampleObject {
+
+    String b;
+    String c;
+
+    public String getB() { return b; }
+
+    public void setB() { this.b = b; }
+
+    public String getC() { return c; }
+
+    public void setC() { this.c = c; }
+}
+```
+
+- [ ] An InvalidRequestBodyException is thrown at runtime.
+- [ ] A MissingPropertyException is thrown at runtime.
+- [x] The text "bnull" is returned in the response body.
+- [ ] The text "a" is returned in th response body.
+
+#### Q60. What effect does private static have on the object service below?
+
+```java
+@SpringBootApplication
+public class Question14 {
+    @Autowired
+    private static Service service;
+
+    public static void main(String[] args) {
+        SpringApplication.run(Question14.class, args);
+    }
+}
+
+@Component
+class Service {}
+```
+
+- [ ] The application will result in a compile error because you can't autowire a private variable.
+- [ ] The application will compile and run, and service will have its dependency correctly injected by Spring.
+- [x] The application will compile and run, but service will not be autowired because you cannot autowire a static class member.
+- [ ] The application will result in a compile error because you attempted to autowire a static variable.
+
+#### Q61. What is a security context?
+
+- [x] The security context includes details of the principal currently using the app, which is stored by default in a `ThreadLocal` in an `Authentication` object.
+- [ ] The security context holds a list of all users and their encrypted passwords in memory and a list of resources that users are able to access.
+- [ ] The security context includes information about safe network IDs and IP addresses that are able to access the system.
+- [ ] The security context includes information about permissions on the local file system describing how local file resources can be accessed.
+
+#### Q62. How might you map an incoming request to a controller method?
+
+- [ ] Annotate a Controller class with `@Controller`. Then, using a specific naming convention for the methods, the `RequestMappingHandlerAdapter` will automatically configure your endpoints with the proper HTTP verb and URI.
+- [ ] Register a controller as a bean. Then, using a specific naming convention for the methods, the `RequestMappingHandlerAdapter` will automatically configure your endpoints based on values from the YAML config file.
+- [x] Annotate a controller method with `@RequestMapping`, or a HTTP verb-specific annotation with a String URI pattern parameter (and other params as needed), which is supported through a `RequestMappingHandlerMapping/Adapter`.
+- [ ] Register a controller as a bean. Then, using a specific naming convention for the methods, the RequestMappingHandlerAdapter will automatically configure your endpoints based on values passed into the bean definition.
+
+Reference: [Spring RequestMapping](https://www.baeldung.com/spring-requestmapping). Spring does not use naming conventions for web requests (unlike e.g. for the Data Repositories)
+
+#### Q63. What methods does the Pointcut expression below reference?
+
+`execution(* setter*(..))`
+
+- [ ] any method with a name that contains the String "setter" with a single parameter
+- [ ] any method with a name that begins with String "setter" with a single parameter
+- [ ] any method with a name that begins with String "setter"
+- [ ] any method with a name that contains the String "setter"
+
+#### Q64. What pattern does Spring MVC implement to delegate request processing to controllers?
+
+- [x] Front Controller
+- [ ] Facade
+- [ ] Reactive Chain
+- [ ] Observer
+
+#### Q65. What methods does this Pointcut expression?
+
+`within(com.linkedin.service..*)`
+
+- [ ] any join point only within the service package
+- [ ] This is not valid Pointcut expression
+- [ ] any method in a class that autowires a service bean
+- [x] any join point within the service package or one of its subpackages
+
+#### Q66. What is the output from invoking this Actuator endpoint in an unmodified Spring Boot application generated using Spring Intializr?
+
+`/shutdown`
+
+- [x] The request would fail because the endpoint is disabled by default.
+- [ ] The Spring Boot app would return a URL and a list of currently running processes, and ask you to confirm the shutdown command.
+- [ ] The Spring Boot app would return a URL to confirm the shutdown command.
+- [ ] The Spring Boot app would begin shutting down.
+
+Reason: By default, all the endpoints are enabled in Spring Boot Application except /shutdown; this is, naturally, part of the Actuator endpoints.
